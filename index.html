@@ -1,0 +1,2841 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-page-node-id="X3K7hXDPOSvbwhzwNh13MM">
+<head data-page-node-id="gvllZ8xuGxzoRbn3Z7r7lR">
+<meta charset="UTF-8" data-page-node-id="e6ECbcGfqkmIMOF9VAZ2P1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" data-page-node-id="0zgeOsZX0TskkY39idgpJ9">
+<meta name="theme-color" content="#74282A" data-page-node-id="OVTOjHc8AdsfwwQ2C0fKuH">
+<title>红鸥党建工作站 · 党员发展人员档案</title>
+<style>
+/* ============ 基础 ============ */
+:root{
+  --red-900:#4E191B; --red-800:#662326; --red-700:#7C2C2E; --red-600:#8E3A3B;
+  --red-tint:#F5EAE7; --red-tint-2:#FAF3F1; --red-line:#E5D2CD;
+  --paper:#F7F4F0; --surface:#FFFFFF; --line:#E5DED7; --line-soft:#EFE9E3;
+  --ink:#2A2420; --ink-2:#6A6157; --ink-3:#9A9188;
+  --ok:#3D7350; --ok-bg:#E9F1EB; --ok-line:#C9DCCF;
+  --warn:#9B731F; --warn-bg:#F8F0DC; --warn-line:#E7D6B2;
+  --bad:#9C3A34; --bad-bg:#F7E7E5; --bad-line:#E8C9C5;
+  --shadow:0 1px 2px rgba(78,25,27,.05), 0 10px 28px -18px rgba(78,25,27,.28);
+  --serif:"Noto Serif SC","Noto Serif CJK SC","Source Han Serif SC","Source Han Serif CN","Songti SC","STSong","SimSun",serif;
+  --sans:"PingFang SC","Microsoft YaHei","Hiragino Sans GB",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --mono:ui-monospace,"SFMono-Regular",Menlo,Consolas,"Courier New",monospace;
+}
+*,*::before,*::after{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{font-family:var(--sans);font-size:14px;line-height:1.62;color:var(--ink);background:var(--paper);
+  -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;cursor:pointer}
+input,select{font:inherit;color:inherit}
+h1,h2,h3,h4,p{margin:0}
+.hidden{display:none!important}
+::selection{background:#E8D3CE}
+
+/* ============ 登录 ============ */
+body.login-mode{background:#4E191B}
+.login-wrap{position:fixed;inset:0;overflow-y:auto;display:flex;flex-direction:column;align-items:center;gap:26px;
+  padding:28px 20px;background:
+  radial-gradient(900px 520px at 15% -10%, #92413F 0%, rgba(146,65,63,0) 62%),
+  radial-gradient(800px 600px at 100% 110%, #5A1D1F 0%, rgba(90,29,31,0) 60%),
+  linear-gradient(150deg,#7E2E30 0%,#662326 52%,#4E191B 100%);}
+.login-card{width:100%;max-width:392px;background:var(--surface);border-radius:8px;padding:34px 32px 26px;margin-top:auto;
+  box-shadow:0 30px 70px -28px rgba(0,0,0,.62);border-top:3px solid var(--red-700);position:relative}
+.login-brand{display:flex;align-items:center;gap:14px}
+.seal{width:40px;height:40px;flex:0 0 40px;border-radius:3px;background:var(--red-700);color:#F8F0E9;
+  display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:14px;line-height:1.05;
+  letter-spacing:0;text-align:center;font-weight:600;box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.28)}
+.seal.big{width:52px;height:52px;flex:0 0 52px;font-size:17px}
+.login-brand h1{font-family:var(--serif);font-size:19px;letter-spacing:1px;font-weight:600}
+.login-brand p{font-size:12px;color:var(--ink-3);letter-spacing:1.5px;margin-top:1px}
+.login-rule{height:1px;background:var(--line);margin:22px 0 18px}
+.fl{display:block;font-size:12px;color:var(--ink-2);margin-bottom:6px;letter-spacing:.5px}
+.linp{width:100%;height:40px;padding:0 12px;border:1px solid var(--line);border-radius:4px;background:#FCFAF8;
+  outline:none;transition:border-color .15s,background .15s;margin-bottom:14px;font-size:14px}
+.linp:focus{border-color:var(--red-600);background:#fff}
+.lbtn{width:100%;height:42px;border:0;border-radius:4px;background:var(--red-700);color:#FBF4EF;
+  font-size:15px;letter-spacing:4px;font-weight:600;transition:background .15s}
+.lbtn:hover{background:var(--red-800)}
+.lerr{color:var(--bad);font-size:12.5px;min-height:18px;margin:-6px 0 8px}
+.lnote{margin-top:18px;font-size:11.5px;color:var(--ink-3);line-height:1.7;padding-top:14px;border-top:1px dashed var(--line)}
+.lfoot{color:rgba(255,255,255,.62);font-size:11.5px;letter-spacing:1px;text-align:center;margin-bottom:auto}
+
+/* ============ 顶栏 ============ */
+.topbar{background:linear-gradient(180deg,#843234 0%,#74282A 60%,#6A2325 100%);color:#F7EEE8;
+  border-bottom:2px solid #4E191B}
+.topbar-in{max-width:1240px;margin:0 auto;padding:13px 24px;display:flex;align-items:center;gap:18px;justify-content:space-between}
+.brand{display:flex;align-items:center;gap:12px;min-width:0}
+.brand-txt{min-width:0}
+.brand-txt h1{font-family:var(--serif);font-size:17px;font-weight:600;letter-spacing:.8px;white-space:nowrap;
+  overflow:hidden;text-overflow:ellipsis}
+.brand-txt p{font-size:11px;letter-spacing:1.4px;color:rgba(255,255,255,.66);margin-top:2px;white-space:nowrap;
+  overflow:hidden;text-overflow:ellipsis}
+.top-actions{display:flex;align-items:center;gap:8px;flex:0 0 auto}
+.tbtn{background:transparent;border:1px solid rgba(255,255,255,.28);color:#F7EEE8;border-radius:4px;
+  padding:5px 12px;font-size:12.5px;letter-spacing:.5px;transition:background .15s,border-color .15s;white-space:nowrap}
+.tbtn:hover{background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.5)}
+.tbtn.ghost{border-color:rgba(255,255,255,.16);color:rgba(255,255,255,.8)}
+.userchip{display:flex;align-items:center;gap:8px;padding:3px 10px 3px 3px;border-radius:999px;
+  background:rgba(255,255,255,.12);white-space:nowrap}
+.avatar{width:26px;height:26px;border-radius:50%;background:#F3E4DC;color:var(--red-800);display:flex;
+  align-items:center;justify-content:center;font-size:12.5px;font-weight:600;font-family:var(--serif)}
+.userchip b{font-size:12.5px;font-weight:600}
+.userchip i{font-style:normal;font-size:11px;opacity:.66;margin-left:2px}
+.rolepick{display:inline-flex;align-items:center;gap:3px;border:0;background:none;padding:2px 4px;margin-left:-2px;
+  border-radius:3px;color:rgba(255,255,255,.72);font-size:11px;font-family:inherit;letter-spacing:.3px;cursor:pointer;
+  transition:background .15s,color .15s;white-space:nowrap}
+.rolepick .sep{opacity:.55;margin-right:1px}
+.rolepick .car{font-size:8px;opacity:.75;line-height:1;transform:translateY(-1px)}
+.rolepick:hover{background:rgba(255,255,255,.16);color:#fff}
+.rolepick.on{background:rgba(255,255,255,.2);color:#fff}
+.pop.role-pop{width:206px;padding:6px}
+.role-pop .ritem{display:block;width:100%;text-align:left;border:0;background:none;padding:7px 9px;border-radius:3px;line-height:1.35}
+.role-pop .ritem b{display:block;font-size:12.5px;font-weight:600;color:var(--ink);letter-spacing:.3px}
+.role-pop .ritem b .ck{float:right;font-style:normal;font-size:11px;color:var(--red-700);line-height:1.5}
+.role-pop .ritem span{display:block;font-size:10.5px;color:var(--ink-3);margin-top:1px}
+.role-pop .ritem.cur{background:var(--red-tint)}
+.role-pop .ritem.cur b{color:var(--red-700)}
+.role-pop .ritem:not(.cur):hover{background:var(--paper)}
+
+/* ============ 二级导航 ============ */
+.subnav{background:var(--surface);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:40}
+.subnav-in{max-width:1240px;margin:0 auto;padding:0 24px;display:flex;gap:26px;overflow-x:auto;scrollbar-width:none}
+.subnav-in::-webkit-scrollbar{display:none}
+.subnav a{padding:11px 0 9px;font-size:13.5px;color:var(--ink-2);border-bottom:2px solid transparent;
+  white-space:nowrap;transition:color .15s,border-color .15s}
+.subnav a:hover{color:var(--red-700)}
+.subnav a.on{color:var(--red-700);font-weight:600;border-bottom-color:var(--red-700)}
+
+/* ============ 主区域 ============ */
+.main{max-width:1240px;margin:0 auto;padding:22px 24px 54px}
+.foot{text-align:center;font-size:11.5px;color:var(--ink-3);letter-spacing:.6px;padding:0 20px 26px}
+.pagehead{margin-bottom:18px}
+.crumb{font-size:12px;color:var(--ink-3);margin-bottom:8px;display:flex;align-items:center;gap:7px;flex-wrap:wrap}
+.crumb a{color:var(--ink-2)}
+.crumb a:hover{color:var(--red-700)}
+.crumb i{font-style:normal;opacity:.5}
+.crumb span:last-child{color:var(--ink)}
+.ptitle{font-family:var(--serif);font-size:20px;font-weight:600;letter-spacing:1px}
+.pdesc{font-size:12.5px;color:var(--ink-2);margin-top:4px}
+.pdesc b{color:var(--red-700);font-weight:600}
+
+/* ============ 统计卡 ============ */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:20px}
+.stat{background:var(--surface);border:1px solid var(--line);border-left:3px solid var(--red-700);
+  border-radius:5px;padding:14px 16px 12px;box-shadow:var(--shadow)}
+.stat.c-ok{border-left-color:var(--ok)}
+.stat.c-warn{border-left-color:var(--warn)}
+.stat.c-bad{border-left-color:var(--bad)}
+.slabel{font-size:12px;color:var(--ink-2);letter-spacing:.6px}
+.sval{font-family:var(--serif);font-size:30px;line-height:1.2;font-weight:600;margin:2px 0 0;letter-spacing:.5px}
+.sval span{font-size:12px;font-family:var(--sans);color:var(--ink-3);margin-left:3px;font-weight:400}
+.snote{font-size:11px;color:var(--ink-3);letter-spacing:.3px}
+
+/* ============ 入口卡 ============ */
+.entries{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:24px}
+.entry{display:flex;flex-direction:column;background:var(--surface);border:1px solid var(--line);border-radius:6px;
+  padding:18px 20px 0;box-shadow:var(--shadow);transition:border-color .18s,box-shadow .18s;overflow:hidden}
+.entry:hover{border-color:var(--red-line);box-shadow:0 2px 4px rgba(78,25,27,.06),0 16px 34px -22px rgba(78,25,27,.4)}
+.entry-top{display:flex;align-items:flex-start;gap:12px;padding-bottom:14px;border-bottom:1px solid var(--line-soft)}
+.eico{width:34px;height:34px;flex:0 0 34px;border-radius:4px;background:var(--red-tint);color:var(--red-700);
+  display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:15px;font-weight:600}
+.etxt h3{font-family:var(--serif);font-size:15.5px;font-weight:600;letter-spacing:.8px}
+.etxt p{font-size:12px;color:var(--ink-3);margin-top:2px}
+.earrow{margin-left:auto;color:var(--red-600);font-size:15px;opacity:.7}
+.entry-list{padding:12px 0 6px}
+.elrow{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:5px 0;font-size:12.5px;color:var(--ink-2)}
+.elrow b{font-weight:600;color:var(--ink);font-size:12.5px}
+.nums{display:inline-flex;gap:5px;font-size:11.5px;font-family:var(--sans)}
+.nums i{font-style:normal;padding:0 6px;border-radius:3px;line-height:18px}
+.nums .ok{color:var(--ok);background:var(--ok-bg)}
+.nums .warn{color:var(--warn);background:var(--warn-bg)}
+.nums .bad{color:var(--bad);background:var(--bad-bg)}
+.entry-foot{border-top:1px solid var(--line-soft);margin:auto -20px 0;padding:9px 20px;font-size:11.5px;
+  color:var(--red-700);background:#FCFAF8;letter-spacing:.5px}
+
+/* ============ 区块标题 ============ */
+.sec{background:var(--surface);border:1px solid var(--line);border-radius:6px;box-shadow:var(--shadow);overflow:hidden}
+.sec-h{display:flex;align-items:center;gap:10px;padding:13px 16px;border-bottom:1px solid var(--line-soft);background:#FCFAF8;flex-wrap:wrap}
+.sec-h h3{font-family:var(--serif);font-size:14.5px;font-weight:600;letter-spacing:.8px;display:flex;align-items:center;gap:8px}
+.sec-h h3::before{content:"";width:3px;height:13px;background:var(--red-700);border-radius:1px;display:block}
+.sec-h .sp{flex:1}
+.sec-b{padding:16px}
+.sec-b.flush{padding:0}
+
+/* ============ 工具条 ============ */
+.toolbar{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:16px}
+.inp{height:34px;border:1px solid var(--line);border-radius:4px;background:#fff;padding:0 10px;font-size:13px;
+  outline:none;transition:border-color .15s;min-width:0}
+.inp:focus{border-color:var(--red-600)}
+.toolbar input.inp{width:220px;flex:0 0 auto}
+.toolbar select.inp{padding-right:26px;cursor:pointer;width:auto;flex:0 0 auto}
+.tinfo{font-size:12px;color:var(--ink-3);letter-spacing:.4px}
+.legend{margin-left:auto;display:flex;align-items:center;gap:5px;font-size:11.5px;color:var(--ink-3);flex-wrap:wrap}
+.lgh{width:8px;height:8px;border-radius:2px;display:inline-block;margin-left:6px}
+.lgh.ok{background:var(--ok)} .lgh.warn{background:#C79A3B} .lgh.bad{background:#B3534C}
+.lgh:first-child{margin-left:0}
+
+/* ============ 批次分组 + 人员卡 ============ */
+.batch{margin-bottom:24px}
+.batchhead{display:flex;align-items:center;gap:10px;margin-bottom:10px;flex-wrap:wrap}
+.batchhead h3{font-family:var(--serif);font-size:14.5px;font-weight:600;letter-spacing:.6px;
+  display:inline-flex;align-items:baseline;gap:6px;cursor:pointer;user-select:none;padding:2px 0}
+.batchhead h3:hover .bh-term{color:var(--ink-2)}
+/* 期数比学期字号更大，便于快速定位 */
+.bh-term{font-size:12.5px;color:var(--ink-3);font-weight:500;letter-spacing:.3px}
+.bh-period{font-size:22px;line-height:1;font-weight:700;color:var(--red-800);letter-spacing:.5px}
+.bh-period em{font-style:normal;font-size:13px;font-weight:600;margin-left:1px}
+.batchhead .bh-tools{display:flex;align-items:center;gap:6px}
+.batchhead .bh-toggle{border:0;background:none;color:var(--ink-3);cursor:pointer;padding:4px 7px;border-radius:4px;
+  display:inline-flex;align-items:center;gap:5px;font-size:11.5px;letter-spacing:.3px}
+.batchhead .bh-toggle:hover{background:var(--line-soft);color:var(--ink-2)}
+.bh-toggle .car{display:inline-block;font-size:10px;transition:transform .18s}
+.batch.collapsed .bh-toggle .car{transform:rotate(-90deg)}
+.batch.collapsed .pgrid-cards{display:none}
+.batch.collapsed{margin-bottom:14px}
+.batch.collapsed .batchhead{margin-bottom:0}
+.batch.collapsed .bbar{opacity:.45}
+.bsub{font-size:12px;color:var(--ink-3)}
+.bbar{flex:1;min-width:70px;max-width:200px;height:3px;background:var(--line-soft);border-radius:2px;overflow:hidden}
+.bbar i{display:block;height:100%;background:var(--ok);opacity:.75;border-radius:2px}
+.pgrid-cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(228px,1fr));gap:12px}
+.pcard{display:block;background:var(--surface);border:1px solid var(--line);border-radius:5px;padding:13px 14px 11px;
+  transition:border-color .16s,box-shadow .16s,transform .16s;box-shadow:0 1px 2px rgba(78,25,27,.04)}
+.pcard:hover{border-color:var(--red-line);box-shadow:0 8px 20px -14px rgba(78,25,27,.5)}
+.pcard-h{display:flex;align-items:baseline;gap:8px}
+.pname{font-family:var(--serif);font-size:15.5px;font-weight:600;letter-spacing:1px}
+.pno{margin-left:auto;font-size:11px;color:var(--ink-3);letter-spacing:.5px;font-family:var(--sans)}
+.pmeta{font-size:11.5px;color:var(--ink-3);margin-top:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.pfoot{display:flex;align-items:center;gap:8px;margin-top:9px;padding-top:9px;border-top:1px dashed var(--line-soft)}
+.dots{display:flex;gap:4px}
+.dot{width:8px;height:8px;border-radius:2px;display:inline-block;background:var(--line)}
+.dot.ok{background:var(--ok)} .dot.warn{background:#C79A3B} .dot.bad{background:#B3534C}
+.pct{margin-left:auto;font-size:11.5px;color:var(--ink-3);font-family:var(--sans)}
+.pct b{color:var(--ink-2);font-weight:600}
+.badge{font-size:10.5px;padding:1px 6px;border-radius:3px;letter-spacing:.4px;border:1px solid;line-height:16px}
+.badge.ok{color:var(--ok);background:var(--ok-bg);border-color:var(--ok-line)}
+.badge.warn{color:var(--warn);background:var(--warn-bg);border-color:var(--warn-line)}
+.badge.bad{color:var(--bad);background:var(--bad-bg);border-color:var(--bad-line)}
+
+/* ============ 状态标签 ============ */
+.pill{display:inline-flex;align-items:center;gap:5px;padding:3px 9px;border-radius:999px;font-size:11.5px;
+  border:1px solid var(--line);background:#FCFAF8;color:var(--ink-2);letter-spacing:.2px;line-height:18px;
+  transition:box-shadow .15s,border-color .15s;white-space:nowrap}
+button.pill:hover{box-shadow:0 0 0 3px rgba(124,44,46,.08)}
+.pill .em{font-size:9px;line-height:1}
+.pill.ok{color:var(--ok);background:var(--ok-bg);border-color:var(--ok-line)}
+.pill.warn{color:var(--warn);background:var(--warn-bg);border-color:var(--warn-line)}
+.pill.bad{color:var(--bad);background:var(--bad-bg);border-color:var(--bad-line)}
+.pill.sm{padding:1px 7px;font-size:11px;line-height:17px}
+
+/* ============ 人员档案详情 ============ */
+.profile{background:var(--surface);border:1px solid var(--line);border-radius:6px;box-shadow:var(--shadow);overflow:hidden;margin-bottom:16px}
+.profile-top{display:flex;align-items:center;gap:14px;padding:18px 20px;border-bottom:1px solid var(--line-soft);
+  background:linear-gradient(180deg,#FBF6F4 0%,#fff 100%);flex-wrap:wrap}
+.pface{width:52px;height:52px;flex:0 0 52px;border-radius:4px;background:var(--red-700);color:#F8F0E9;
+  display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:22px;letter-spacing:1px}
+.pid-txt h2{font-family:var(--serif);font-size:21px;font-weight:600;letter-spacing:2px}
+.pid-txt p{font-size:12px;color:var(--ink-3);margin-top:2px;letter-spacing:.6px}
+.ptags{display:flex;gap:6px;align-items:center;margin-left:auto;flex-wrap:wrap}
+.tag{font-size:11px;padding:2px 8px;border-radius:3px;background:var(--red-tint);color:var(--red-700);
+  border:1px solid var(--red-line);letter-spacing:.4px}
+.pgrid{display:grid;grid-template-columns:repeat(3,1fr)}
+.pcell{padding:12px 20px;border-right:1px solid var(--line-soft);border-bottom:1px solid var(--line-soft)}
+.pcell:nth-child(3n){border-right:0}
+.pcell span{display:block;font-size:11px;color:var(--ink-3);letter-spacing:.6px;margin-bottom:2px}
+.pcell b{font-size:13.5px;font-weight:500;letter-spacing:.3px}
+
+/* 材料行 */
+.mrow{display:grid;grid-template-columns:38px minmax(0,1fr) auto auto;gap:0 14px;align-items:center;
+  padding:13px 16px;border-bottom:1px solid var(--line-soft)}
+.mrow:last-child{border-bottom:0}
+.mrow:hover{background:#FCFAF8}
+.mico{width:32px;height:32px;border-radius:4px;background:var(--red-tint-2);border:1px solid var(--red-line);
+  display:flex;align-items:center;justify-content:center;font-size:14px}
+.mname{font-size:13.5px;font-weight:500;letter-spacing:.3px}
+.mnote{font-size:11.5px;color:var(--ink-3);margin-top:1px}
+.mmeta{font-size:11px;color:var(--ink-3)}
+.mstatus{display:flex;justify-content:flex-end}
+.mfile{display:flex;justify-content:flex-end;min-width:88px}
+.flink{border:0;background:none;padding:0;font-size:12px;color:var(--red-700);letter-spacing:.3px;
+  border-bottom:1px solid var(--red-line);line-height:1.5}
+.flink:hover{color:var(--red-900);border-color:var(--red-700)}
+.flink.off{color:var(--ink-3);border-bottom-color:var(--line);cursor:not-allowed}
+
+/* ---- 材料附件（多文件） ---- */
+.mfile-chips{display:flex;flex-wrap:wrap;gap:5px;margin-top:6px}
+.fchip{display:inline-flex;align-items:center;gap:5px;max-width:100%;font-size:11px;color:var(--ink-2);
+  background:#FBF7F4;border:1px solid var(--line);border-radius:4px;padding:2px 6px;cursor:pointer;line-height:17px}
+.fchip:hover{border-color:var(--red-line);color:var(--red-700)}
+.fchip .fi{font-size:10px;line-height:1}
+.fchip .fn{max-width:150px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.fchip .fsz{color:var(--ink-3);font-size:10px;font-variant-numeric:tabular-nums}
+.fchip .fx{border:0;background:none;color:var(--ink-3);cursor:pointer;font-size:12px;line-height:1;padding:0 1px}
+.fchip .fx:hover{color:#B3534C}
+.fchip.new{border-style:dashed;border-color:var(--red-line);background:#FDF7F5}
+.fup{border:1px dashed var(--line);border-radius:5px;padding:12px;text-align:center;font-size:12px;color:var(--ink-3);
+  cursor:pointer;background:#FCFAF8;transition:border-color .15s,background .15s}
+.fup:hover,.fup.over{border-color:var(--red-line);background:#FBF3F1;color:var(--red-700)}
+.fup b{color:var(--red-700);font-weight:600}
+.fup .fup-t{font-size:11px;margin-top:3px;color:var(--ink-3)}
+.fempty{font-size:11.5px;color:var(--ink-3);padding:3px 0}
+.attprev{text-align:center;padding:6px}
+.attprev img{max-width:100%;max-height:60vh;border:1px solid var(--line);border-radius:4px}
+
+/* ============ 表格 ============ */
+.tw{overflow-x:auto;background:var(--surface)}
+table{width:100%;border-collapse:collapse;font-size:13px}
+th{background:#FBF8F5;color:var(--ink-2);font-weight:600;font-size:11.5px;letter-spacing:.6px;text-align:left;
+  padding:9px 12px;border-bottom:1px solid var(--line);white-space:nowrap;position:sticky;top:0;z-index:2}
+td{padding:8px 12px;border-bottom:1px solid var(--line-soft);vertical-align:middle}
+tbody tr:hover{background:#FCFAF8}
+tbody tr:last-child td{border-bottom:0}
+td.num{color:var(--ink-3);font-size:12px;font-variant-numeric:tabular-nums}
+td.nm{font-weight:500;letter-spacing:.4px}
+td.dim{color:var(--ink-3);font-size:12px}
+.tbl-min{min-width:760px}
+.tbl-ledger{min-width:1080px}
+.tbl-ledger th,.tbl-ledger td{padding:7px 9px}
+table.mini{font-size:12.5px}
+table.mini th{position:static;background:#FCFAF8}
+
+/* 日志：桌面表格 / 手机列表 */
+.loglist{padding:4px 0}
+.logitem{padding:10px 15px;border-bottom:1px solid var(--line-soft)}
+.logitem:last-child{border-bottom:0}
+.logitem .lt{font-size:11.5px;color:var(--ink-3);letter-spacing:.3px}
+.logitem .lc{font-size:12.5px;color:var(--ink-2);margin-top:2px;line-height:1.55}
+.logitem .lc b{color:var(--ink);font-weight:600}
+.logtbl td{vertical-align:top}
+.logtbl th:nth-child(2),.logtbl td:nth-child(2){width:112px;white-space:nowrap}
+.ldet{line-height:1.6;word-break:break-word}
+.plink{color:var(--red-700);border-bottom:1px solid var(--red-line);padding-bottom:1px}
+.plink:hover{background:var(--red-tint)}
+.lrole{margin-left:4px;font-size:9.5px;color:var(--ink-3);border:1px solid var(--line);border-radius:2px;padding:0 3px;
+  vertical-align:1px;letter-spacing:0}
+.arw{color:var(--red-600);padding:0 2px;font-weight:600}
+.probtag{background:#F3E4DC;border-color:#E3C7BC;color:var(--red-800);font-weight:600}
+.only-mobile{display:none}
+@media (max-width:600px){
+  .only-desktop{display:none}
+  .only-mobile{display:block}
+}
+
+/* ============ 空状态 ============ */
+.empty{padding:52px 20px;text-align:center;color:var(--ink-3)}
+.empty .e1{font-family:var(--serif);font-size:15px;color:var(--ink-2);letter-spacing:1px;margin-bottom:5px}
+.empty .e2{font-size:12px}
+
+/* ============ 弹层 ============ */
+.pop{position:fixed;z-index:300;background:#fff;border:1px solid var(--line);border-radius:5px;width:176px;
+  box-shadow:0 16px 40px -14px rgba(78,25,27,.42);padding:5px}
+.pop-title{font-size:10.5px;color:var(--ink-3);padding:4px 8px 6px;border-bottom:1px solid var(--line-soft);
+  margin-bottom:4px;letter-spacing:.4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.pop button{display:flex;width:100%;align-items:center;gap:8px;padding:6px 8px;border:0;background:none;
+  border-radius:3px;font-size:12.5px;text-align:left;color:var(--ink)}
+.pop button:hover{background:var(--paper)}
+.pop button.cur{background:var(--red-tint);color:var(--red-700);font-weight:600}
+.pop button .em{font-size:9px}
+.mask{position:fixed;inset:0;background:rgba(42,36,32,.44);z-index:400;display:flex;align-items:center;
+  justify-content:center;padding:20px;overflow:auto}
+.modal{background:#fff;border-radius:6px;width:100%;max-width:470px;box-shadow:0 30px 70px -24px rgba(0,0,0,.5);
+  border-top:3px solid var(--red-700);max-height:88vh;overflow:auto}
+.modal-h{padding:16px 20px 12px;border-bottom:1px solid var(--line-soft);display:flex;align-items:center;gap:10px}
+.modal-h h3{font-family:var(--serif);font-size:15.5px;font-weight:600;letter-spacing:1px}
+.modal-h .x{margin-left:auto;border:0;background:none;font-size:18px;color:var(--ink-3);line-height:1;padding:0 2px}
+.modal-b{padding:16px 20px}
+.modal-f{padding:12px 20px 18px;display:flex;gap:10px;justify-content:flex-end;flex-wrap:wrap}
+.field{margin-bottom:14px}
+.field label{display:block;font-size:12px;color:var(--ink-2);margin-bottom:5px;letter-spacing:.4px}
+.field .inp{width:100%;height:36px}
+.hint{font-size:11.5px;color:var(--ink-3);line-height:1.65;margin-top:5px}
+.divider{height:1px;background:var(--line-soft);margin:16px 0}
+.btn{height:34px;padding:0 16px;border-radius:4px;border:1px solid var(--line);background:#fff;font-size:13px;
+  letter-spacing:.5px;transition:border-color .15s,background .15s}
+.btn:hover{border-color:var(--red-line);background:#FCFAF8}
+.btn.primary{background:var(--red-700);border-color:var(--red-700);color:#FBF4EF;font-weight:600}
+.btn.primary:hover{background:var(--red-800);border-color:var(--red-800)}
+.btn.danger{color:var(--bad);border-color:var(--bad-line)}
+.btn.danger:hover{background:var(--bad-bg)}
+.opgrid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.opgrid .btn{width:100%}
+.toast{position:fixed;left:50%;bottom:34px;transform:translate(-50%,10px);background:#2A2420;color:#fff;
+  padding:9px 16px;border-radius:4px;font-size:12.5px;letter-spacing:.4px;opacity:0;pointer-events:none;
+  transition:opacity .18s,transform .18s;z-index:500;max-width:86vw;text-align:center;
+  box-shadow:0 12px 30px -10px rgba(0,0,0,.5)}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+
+/* ============ 编辑模式 ============ */
+.tbtn.edit-toggle{display:inline-flex;align-items:center;gap:6px}
+.tbtn.edit-toggle .sw{width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,.42);transition:background .15s}
+.tbtn.edit-toggle.on{background:#F3E4DC;border-color:#F3E4DC;color:var(--red-800);font-weight:600}
+.tbtn.edit-toggle.on .sw{background:#3D7350}
+.edit-toggle .ls{display:none}
+.ebtn{display:inline-flex;align-items:center;justify-content:center;gap:4px;height:26px;padding:0 9px;
+  border:1px solid var(--line);border-radius:3px;background:#fff;font-size:12px;color:var(--ink-2);
+  letter-spacing:.3px;transition:border-color .15s,color .15s,background .15s;white-space:nowrap}
+.ebtn:hover{border-color:var(--red-line);color:var(--red-700);background:#FCFAF8}
+.ebtn.danger{color:var(--bad);border-color:var(--bad-line)}
+.ebtn.danger:hover{background:var(--bad-bg);border-color:var(--bad);color:var(--bad)}
+.ebtn.mini{height:22px;padding:0 7px;font-size:11.5px}
+.ebtn.solid{background:var(--red-tint);border-color:var(--red-line);color:var(--red-700)}
+.ebtn.solid:hover{background:#EDDAD5}
+.pcard-link{display:block}
+.pcard-tools{display:flex;gap:6px;margin-top:9px;padding-top:9px;border-top:1px dashed var(--line-soft)}
+.pflag{display:inline-flex;align-items:center;justify-content:center;width:14px;height:14px;border-radius:2px;
+  background:var(--red-700);color:#fff;font-size:9px;line-height:1;margin-right:5px;vertical-align:1px;
+  font-family:var(--serif);letter-spacing:0}
+.prob-batch .batchhead h3{color:var(--red-800)}
+.btag{display:inline-block;margin-left:8px;font-family:var(--sans);font-size:10px;font-weight:400;letter-spacing:.3px;
+  color:var(--red-700);background:var(--red-tint);border:1px solid var(--red-line);border-radius:2px;padding:1px 5px;
+  vertical-align:1px}
+.prob-batch .pcard{border-color:var(--red-line);background:linear-gradient(180deg,#FFFDFC,#FFFBF9)}
+.chk{display:inline-flex;align-items:center;gap:7px;font-size:13px;color:var(--ink);cursor:pointer;
+  border:1px solid var(--line);border-radius:4px;padding:8px 11px;background:#fff}
+.chk input{width:15px;height:15px;accent-color:#7C2C2E;margin:0;cursor:pointer}
+.page-actions{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-left:auto}
+.hd-row{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
+.editbar{display:flex;align-items:center;gap:10px;flex-wrap:wrap;background:var(--red-tint-2);
+  border:1px solid var(--red-line);border-radius:5px;padding:8px 12px;margin-bottom:16px}
+.editbar .et{font-size:12px;color:var(--red-800);letter-spacing:.4px}
+.editbar .et b{font-weight:600}
+.editbar .ea{margin-left:auto;display:flex;gap:8px;flex-wrap:wrap}
+/* ---- 批量导入名单 ---- */
+.modal.wide{max-width:760px}
+.imp-sec{margin-bottom:13px}
+.imp-sec > .lb{display:block;font-size:12px;color:var(--ink-2);margin-bottom:6px;letter-spacing:.4px}
+.dropzone{border:1.5px dashed var(--red-line);border-radius:6px;background:#FCFAF8;
+  padding:11px 14px;text-align:center;cursor:pointer;transition:background .15s,border-color .15s}
+.dropzone:hover,.dropzone.on{background:#F8EEEA;border-color:var(--red-700)}
+.dropzone .dz1{font-size:13px;color:var(--red-800);letter-spacing:.5px}
+.dropzone .dz2{font-size:11.5px;color:var(--ink-3);margin-top:4px;line-height:1.55}
+.imp-list{width:100%;min-height:88px;margin-top:8px;font-size:12.5px;line-height:1.75;
+  font-family:var(--mono);border:1px solid var(--line);border-radius:5px;padding:9px 11px;resize:vertical;
+  background:#fff;color:var(--ink)}
+.imp-list:focus{outline:none;border-color:var(--red-line)}
+.imp-hide{display:none !important}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:4px;overflow:hidden}
+.seg button{height:30px;padding:0 14px;font-size:12.5px;background:#fff;border:0;
+  border-right:1px solid var(--line);color:var(--ink-2);transition:background .15s,color .15s}
+.seg button:last-child{border-right:0}
+.seg button.on{background:var(--red-tint);color:var(--red-800);font-weight:600}
+.imp-opts{display:flex;flex-direction:column;gap:7px;margin-top:9px}
+.imp-opts .chk{font-size:12.5px;padding:7px 10px;line-height:1.5}
+.imp-stat{font-size:12px;color:var(--ink-2);margin:0 0 8px;display:flex;align-items:center;gap:6px;flex-wrap:wrap;line-height:1.7}
+.imp-stat b{color:var(--red-700);font-weight:600}
+.imp-scroll{max-height:168px;overflow:auto;border:1px solid var(--line);border-radius:5px}
+.rostertbl{width:100%;border-collapse:collapse;font-size:12.5px}
+.rostertbl th{background:#FCFAF8;font-size:11.5px;color:var(--ink-3);font-weight:500;text-align:left;
+  padding:6px 8px;border-bottom:1px solid var(--line);letter-spacing:.4px;white-space:nowrap;position:sticky;top:0;z-index:1}
+.rostertbl td{padding:6px 8px;border-bottom:1px solid var(--line-soft);vertical-align:top}
+.rostertbl tr:last-child td{border-bottom:0}
+.rostertbl tr.skip td{opacity:.52}
+.rostertbl .r-warn{color:#8A6320;font-size:11.5px}
+.rostertbl .r-bad{color:var(--bad);font-size:11.5px}
+.bm-row{padding:8px 0;border-bottom:1px solid var(--line-soft)}
+.bm-row:last-of-type{border-bottom:0}
+.bm-row .inp{height:32px;width:100%}
+.bm-op{display:flex;align-items:center;gap:6px;margin-top:6px}
+.bm-op .tinfo{margin-right:auto}
+.bm-new{display:flex;gap:8px;margin-top:12px;padding-top:12px;border-top:1px dashed var(--line)}
+.bm-new .inp{flex:1;height:34px}
+.mfile{display:flex;align-items:center;justify-content:flex-end;gap:8px;min-width:88px}
+
+/* ============ 响应式 ============ */
+@media (max-width:1024px){
+  .stats{grid-template-columns:repeat(2,1fr)}
+  .entries{grid-template-columns:1fr}
+}
+@media (max-width:760px){
+  .topbar-in{padding:11px 14px;flex-direction:column;align-items:stretch;gap:10px}
+  .brand-txt h1{font-size:15px;white-space:normal}
+  .brand-txt p{font-size:10.5px;letter-spacing:.8px;white-space:normal}
+  .top-actions{flex-wrap:wrap;gap:6px;justify-content:flex-end}
+  .top-actions [data-act="export-csv"]{display:none}  /* 台账页与设置里均有导出入口，手机顶栏省位 */
+  .tbtn{padding:4px 10px;font-size:12px}
+  .userchip{margin-left:0;padding:2px 6px 2px 2px;gap:6px}
+  .userchip .rolepick{font-size:10.5px;padding:4px 3px}
+  .userchip .rolepick .car{font-size:7.5px}
+  .role-pop{width:206px}
+  .subnav-in{padding:0 14px;gap:18px}
+  .main{padding:16px 14px 44px}
+  .pgrid{grid-template-columns:repeat(2,1fr)}
+  .pcell:nth-child(3n){border-right:1px solid var(--line-soft)}
+  .pcell:nth-child(2n){border-right:0}
+  .sec-b{padding:12px}
+  .legend{margin-left:0;width:100%}
+  .toolbar input.inp{width:100%;flex:1 1 100%}
+  .mrow{grid-template-columns:34px minmax(0,1fr);row-gap:8px}
+  .mrow .mstatus{grid-column:2;grid-row:2;justify-content:flex-start}
+  .mrow .mfile{grid-column:2;grid-row:2;justify-content:flex-end}
+  .pid-txt h2{font-size:19px}
+  .ptags{margin-left:0;width:100%}
+  .sval{font-size:26px}
+  .opgrid{grid-template-columns:1fr}
+  /* 手机端编辑开关改为右下浮动按钮，避免顶栏拥挤 */
+  .edit-toggle{position:fixed;right:14px;bottom:16px;z-index:150;padding:9px 15px;border-radius:999px;
+    border-color:transparent;background:var(--red-700);color:#FBF4EF;font-size:12.5px;letter-spacing:1px;
+    box-shadow:0 10px 26px -10px rgba(78,25,27,.75)}
+  .edit-toggle.on{background:#F3E4DC;color:var(--red-800);border-color:transparent}
+  .edit-toggle .lf{display:none}
+  .edit-toggle .ls{display:inline}
+  .main{padding-bottom:82px}
+  .toast{bottom:74px}
+  .hd-row{align-items:flex-start}
+  .page-actions{margin-left:0;width:100%;margin-top:8px}
+}
+@media (max-width:420px){
+  .stats{grid-template-columns:1fr 1fr;gap:10px}
+  .stat{padding:11px 12px}
+  .sval{font-size:23px}
+}
+@media print{
+  .topbar,.subnav,.foot,.top-actions,.toolbar,.earrow{display:none!important}
+  body{background:#fff}
+  .main{padding:0}
+  .sec,.profile,.stat,.entry{box-shadow:none}
+}
+</style>
+</head>
+<body data-page-node-id="rfoXKZz81E2hzUQ8QxUo9r">
+
+<!-- ================= 登录 ================= -->
+<div id="login" class="login-wrap" data-page-node-id="rCdSGMDGuruZ8DjfyQGZrA">
+  <div class="login-card" data-page-node-id="h2PEWj1tWdCtocN1gLybPu">
+    <div class="login-brand" data-page-node-id="bD2cwI7qU0i1vaXRRq5SgX">
+      <div class="seal big" data-page-node-id="7XAaEaAmtGaEXmAntOarUg">红鸥</div>
+      <div data-page-node-id="6K3lgGOAZreDZsik6wMn3e">
+        <h1 data-page-node-id="D33TUFgDifsghOLYH36zxj">红鸥党建工作站</h1>
+        <p data-page-node-id="wMHDnvCYoWKEphZejxYxPv">党员发展人员档案</p>
+      </div>
+    </div>
+    <div class="login-rule" data-page-node-id="aZC7Yd8WlT0PMhJuAeR5Ok"></div>
+    <form id="loginForm" autocomplete="off" novalidate data-page-node-id="IQWiMZtRykbjLUKO7WXdHO">
+      <label class="fl" for="loginUser" data-page-node-id="Gcwi9zpzc2nSQP1LNAGxrW">账号</label>
+      <input id="loginUser" class="linp" type="text" placeholder="请输入工作账号" autocomplete="username" data-page-node-id="bEPp2VP4T0VlUFGWsUvCp5">
+      <label class="fl" for="loginPass" data-page-node-id="qVnBiPv4vPIMxZkjroAEbL">密码</label>
+      <input id="loginPass" class="linp" type="password" placeholder="请输入登录密码" autocomplete="current-password" data-page-node-id="A40dmEtqbQSwnph6ENI1Zo">
+      <div class="lerr" id="loginErr" data-page-node-id="PN6rBAfypL3yh5cjdNVaSA"></div>
+      <button class="lbtn" type="submit" data-page-node-id="XGofNoko8pKdvCic3SMLnL">登 录</button>
+    </form>
+    <p class="lnote" data-page-node-id="PBOLLDOYn9qpw0WN860jiE">本系统用于高校党建工作站内部管理，档案信息不对外公开。<br data-page-node-id="G2P2GnJzjmvPdHrMTYlELG">演示账号：<b data-page-node-id="EGoT94wqxNK7DvLH5Ix04B">admin</b> / <b data-page-node-id="GArUfdAZpFHAJhz6WSWNqB">123456</b></p>
+  </div>
+  <p class="lfoot" data-page-node-id="orrTRpI5OoXxiygX1rTtFd">红鸥党建工作站 · 内部资料 请勿外传</p>
+</div>
+
+<!-- ================= 应用 ================= -->
+<div id="app" class="hidden" data-page-node-id="3ycv6gNBXL7BvfLTc1vyMD">
+  <header class="topbar" data-page-node-id="wjcluHwc2OcSihbkV6oFmB">
+    <div class="topbar-in" data-page-node-id="UljLqMoU8EXW4rBQJDP0iB">
+      <div class="brand" data-page-node-id="MU987WUe06DOTD9T2hpw9H">
+        <div class="seal" data-page-node-id="86XR1aUNzc2M659KyAfwen">红鸥</div>
+        <div class="brand-txt" data-page-node-id="1i8mFIH6NS6W5ZYKGz5s3j">
+          <h1 data-page-node-id="DKtwcrOUoggHPkQgIaJ5A0">红鸥党建工作站 · 党员发展人员档案</h1>
+          <p data-page-node-id="qgiM5GHJmL5qsIsZU4RIzD">高校党建内部管理 · 党员发展人员培养考察档案</p>
+        </div>
+      </div>
+      <div class="top-actions" data-page-node-id="g76Tfeyfxfh7HJDcLqpfHo">
+        <button class="tbtn edit-toggle" data-act="toggle-edit" id="editToggle" title="开启后可维护人员档案、材料明细、活动记录与批次"><i class="sw"></i><span class="lf">编辑模式</span><span class="ls">编辑</span></button>
+        <button class="tbtn" data-act="library" data-page-node-id="K09sMv7domJVCCak9oCxi2">资料库</button>
+        <button class="tbtn" data-act="export-csv" data-page-node-id="AhE86OyMIi5NQL3AHNfMHv">导出台账</button>
+        <button class="tbtn" data-act="settings" data-page-node-id="nyuKVQtnUjefqgzgR3kS1l">设置</button>
+        <div class="userchip" data-page-node-id="2PIl0anJ4VxbiEHIywaBNp"><span class="avatar" id="uavatar" data-page-node-id="vTVKSRcX07Xu63xNMZGZiP">红</span><b id="uname" data-page-node-id="DMaN3GeJOYO2P5wNWLTuGo">—</b><button class="rolepick" id="urole" data-act="pick-role" title="点击切换身份：老师 / 负责人 / 学生" data-page-node-id="947HWxq32GlIrB3QDqNZpR"><span class="sep">·</span><span class="rtxt">—</span><span class="car">▾</span></button></div>
+        <button class="tbtn ghost" data-act="logout" data-page-node-id="cDWTZjC0l29f4LE1YS8wAv">退出</button>
+      </div>
+    </div>
+  </header>
+  <nav class="subnav" data-page-node-id="CMMHxcJQZ3BysLQqofA4We">
+    <div class="subnav-in" id="subnav" data-page-node-id="bGGry7QjXVpU1HgHOoqHI8">
+      <a href="#/" data-nav="home" data-page-node-id="qW2klAylPzqkZwquV3mgXA">工作台</a>
+      <a href="#/persons" data-nav="persons" data-page-node-id="2uotszv3xWr8omT36BE72B">按人员查看</a>
+      <a href="#/materials" data-nav="materials" data-page-node-id="PCweA9hNe1eoVoYAb1XJuB">按材料类型查看</a>
+      <a href="#/ledger" data-nav="ledger" data-page-node-id="FPPsC8KTjSuD2P6NBySX10">总台账</a>
+      <a href="#/logs" data-nav="logs" data-page-node-id="tR3JtSaitdZv0X1oH9l7Dx">操作日志</a>
+    </div>
+  </nav>
+  <main class="main" id="view" data-page-node-id="JaUrfTlLcLUslIB2FVOWu7"></main>
+  <footer class="foot" data-page-node-id="pGoAWIPeHAiWVoi4ntXSOB">红鸥党建工作站 · 内部资料 请勿外传 · 数据保存于本机浏览器，可导出快照至 WorkBuddy 资料库备份</footer>
+</div>
+
+<div id="modalRoot" data-page-node-id="oiKyPDCXr31xzhSvdwAG7A"></div>
+<div class="toast" id="toast" data-page-node-id="vltni6SkoD5hVqiNpC9yiu"></div>
+
+<script>
+/* =========================================================
+   红鸥党建工作站 · 党员发展人员档案
+   单文件应用：数据持久化于 localStorage，可导出/导入快照
+   ========================================================= */
+"use strict";
+
+/* ---------------- 常量 ---------------- */
+var LS_DB   = "hongou.archives.v2";
+var LS_CFG  = "hongou.config.v2";
+var LS_LOG  = "hongou.logs.v2";
+var LS_SESS = "hongou.session.v2";
+
+var MATERIALS = [
+  { id:"apply",     name:"入党申请书",           short:"入党申请书", icon:"📄" },
+  { id:"report",    name:"思想汇报",             short:"思想汇报",   icon:"📝" },
+  { id:"talk",      name:"谈话记录",             short:"谈话记录",   icon:"🗣️" },
+  { id:"cultivate", name:"积极分子培养考察表",   short:"培养考察表", icon:"📋" },
+  { id:"cert",      name:"结业证书",             short:"结业证",     icon:"🎓" },
+  { id:"activity",  name:"活动参与记录",         short:"活动台账",   icon:"🚩" }
+];
+
+var ST = {
+  done:    { label:"已完成", em:"✅", cls:"ok"   },
+  revise:  { label:"修改中", em:"🟡", cls:"warn" },
+  missing: { label:"未交",   em:"🔴", cls:"bad"  }
+};
+
+var FILE_NAME = {
+  apply:"01_入党申请书.pdf",
+  report:"02_思想汇报.pdf",
+  talk:"03_谈话记录.pdf",
+  cultivate:"04_培养考察表.pdf",
+  cert:"05_结业证书.pdf",
+  activity:"06_活动参与记录.pdf"
+};
+
+var ROLES = [
+  { k:"老师",   d:"指导教师 · 查阅与指导档案" },
+  { k:"负责人", d:"支部负责人 · 维护档案与批次" },
+  { k:"学生",   d:"积极分子 · 查看本人档案" }
+];
+var ROLE_KEYS = ROLES.map(function(r){ return r.k; });
+
+var ACCOUNTS = [
+  { u:"admin",     p:"123456", name:"王振华", role:"负责人" },
+  { u:"zuzhi",     p:"123456", name:"李文静", role:"老师" },
+  { u:"xuanchuan", p:"123456", name:"张海涛", role:"学生" }
+];
+
+/* 旧数据里的职务名映射到三类身份，避免出现菜单里选不中的第四种角色 */
+var ROLE_ALIAS = {
+  "支部书记":"负责人", "副书记":"负责人", "组织委员":"老师", "宣传委员":"老师",
+  "辅导员":"老师", "指导教师":"老师", "管理员":"负责人", "积极分子":"学生"
+};
+function normRole(r){
+  if(ROLE_KEYS.indexOf(r) > -1) return r;
+  return ROLE_ALIAS[r] || "负责人";
+}
+
+/* ---------------- 工具 ---------------- */
+function $(s, r){ return (r||document).querySelector(s); }
+function esc(s){
+  return String(s==null?"":s).replace(/[&<>"']/g, function(c){
+    return ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"})[c];
+  });
+}
+function pad2(n){ return String(n).padStart(2,"0"); }
+function nowStamp(){
+  var d = new Date();
+  return d.getFullYear()+"-"+pad2(d.getMonth()+1)+"-"+pad2(d.getDate())+" "+pad2(d.getHours())+":"+pad2(d.getMinutes());
+}
+function dateStamp(){
+  var d = new Date();
+  return ""+d.getFullYear()+pad2(d.getMonth()+1)+pad2(d.getDate());
+}
+function toast(msg){
+  var t = $("#toast");
+  t.textContent = msg;
+  t.classList.add("show");
+  clearTimeout(toast._t);
+  toast._t = setTimeout(function(){ t.classList.remove("show"); }, 2200);
+}
+
+/* ---------------- 状态与数据 ---------------- */
+var DB  = null;
+var CFG = { user:"王振华", role:"负责人", base:"" };
+var LOGS = [];
+var state = { q:"", batch:"全部", mq:"", mbatch:"全部", lq:"", lbatch:"全部", logQ:"", logUser:"全部", logAct:"全部" };
+var currentPath = null;
+var EDIT = false;   /* 编辑模式：开启后可增删改人员、材料明细、活动记录与批次 */
+
+/* 批次折叠状态（本地记忆，刷新后保持） */
+var LS_UI = "hongou.ui.v1";
+var BCOL = {};
+try{ var _ui = localStorage.getItem(LS_UI); if(_ui){ BCOL = JSON.parse(_ui) || {}; } }catch(e){ BCOL = {}; }
+function saveBcol(){ try{ localStorage.setItem(LS_UI, JSON.stringify(BCOL)); }catch(e){} }
+function isCollapsed(key){ return !!BCOL[key]; }
+function toggleBatch(key){
+  if(!key) return;
+  BCOL[key] = !BCOL[key];
+  saveBcol();
+  paintPersons();
+}
+
+/* 批次名拆成「学期」+「期数」，期数单独放大显示 */
+function batchParts(b){
+  var s = String(b || "");
+  var m = s.match(/^(.+?)[—–\-－]+(.+)$/);
+  if(m && /期/.test(m[2])) return { term:m[1].trim(), period:m[2].trim() };
+  return { term:"", period:s };
+}
+function batchTitleHTML(b){
+  var x = batchParts(b);
+  if(!x.term) return '<span class="bh-term" style="font-size:15px;color:var(--ink);font-weight:600">' + esc(x.period || b) + '</span>';
+  var mm = x.period.match(/^(\d+)(.*)$/);
+  var phtml = mm ? mm[1] + '<em>' + esc(mm[2]) + '</em>' : esc(x.period);
+  return '<span class="bh-term">' + esc(x.term) + '</span><span class="bh-period">' + phtml + '</span>';
+}
+
+function loadAll(){
+  try{
+    var d = localStorage.getItem(LS_DB);
+    DB = d ? JSON.parse(d) : buildData();
+  }catch(e){ DB = buildData(); }
+
+  try{
+    var c = localStorage.getItem(LS_CFG);
+    if(c){ var o = JSON.parse(c); if(o && typeof o === "object"){ CFG = Object.assign(CFG, o); } }
+  }catch(e){}
+
+  try{
+    var l = localStorage.getItem(LS_LOG);
+    if(l){ LOGS = JSON.parse(l) || []; }
+  }catch(e){ LOGS = []; }
+
+  CFG.role = normRole(CFG.role);
+  normalize();
+}
+function saveAll(){
+  try{
+    localStorage.setItem(LS_DB, JSON.stringify(DB));
+    localStorage.setItem(LS_CFG, JSON.stringify(CFG));
+    localStorage.setItem(LS_LOG, JSON.stringify(LOGS.slice(0, 300)));
+  }catch(e){ toast("本机存储空间不足，请导出台账备份"); }
+}
+function normalize(){
+  if(!DB || !Array.isArray(DB.people)){ DB = buildData(); }
+  if(!DB.meta) DB.meta = { org:"红鸥党建工作站", version:3 };
+  if(!Array.isArray(DB.meta.batches)) DB.meta.batches = [];
+  DB.people.forEach(function(p){
+    if(!p.materials) p.materials = {};
+    MATERIALS.forEach(function(m){
+      if(!p.materials[m.id]) p.materials[m.id] = { status:"missing", file:"", note:"未提交", updatedAt:"", updatedBy:"", files:[] };
+      if(!p.materials[m.id].status) p.materials[m.id].status = "missing";
+      if(!Array.isArray(p.materials[m.id].files)) p.materials[m.id].files = [];
+    });
+    if(!Array.isArray(p.activities)) p.activities = [];
+    if(typeof p.probation !== "boolean") p.probation = false;
+    if(typeof p.probationDate !== "string") p.probationDate = "";
+    if(DB.meta.batches.indexOf(p.batch) < 0) DB.meta.batches.push(p.batch);
+  });
+  migrateData();
+}
+
+/* 旧版演示数据（2024年第1期 这类批次名）升级到按学期命名的新内置数据。
+   只在「整份数据都是旧演示批次」时替换，避免误删已经录入的真实档案。 */
+function migrateData(){
+  var oldName = /^\d{4}年第[12]期$/;
+  var ver = (DB.meta && DB.meta.version) || 0;
+  var allOldDemo = Array.isArray(DB.people) && DB.people.length > 0 &&
+    DB.people.every(function(p){ return oldName.test(String(p.batch || "")); });
+  if(ver < 3 && allOldDemo){
+    DB = buildData();
+    log("数据升级", "批次改为「25年上半年—43期」至「27年下半年—48期」，并加入预备党员标记");
+    try{
+      localStorage.setItem(LS_DB, JSON.stringify(DB));
+      localStorage.setItem(LS_LOG, JSON.stringify(LOGS.slice(0, 300)));
+    }catch(e){}
+    return true;
+  }
+  if(DB.meta) DB.meta.version = 3;
+  return false;
+}
+
+/* ---------------- 演示数据生成（固定种子，保证每次一致） ---------------- */
+function mulberry32(a){
+  return function(){
+    a |= 0; a = a + 0x6D2B79F5 | 0;
+    var t = Math.imul(a ^ a >>> 15, 1 | a);
+    t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t;
+    return ((t ^ t >>> 14) >>> 0) / 4294967296;
+  };
+}
+function pick(rnd, arr){ return arr[Math.floor(rnd()*arr.length)]; }
+
+function buildData(){
+  var SUR = "李王张刘陈杨黄赵吴周徐孙马朱胡郭何高林罗郑梁谢宋唐许韩冯邓曹彭曾萧田董袁潘蒋蔡余杜叶程苏魏吕丁任沈姚卢姜崔钟谭陆汪范金石廖贾夏韦付方白邹孟熊秦邱江尹薛段雷侯史陶黎贺顾毛郝龚邵万钱严武戴莫孔向汤".split("");
+  var GIV = ["雨欣","佳怡","宇轩","思远","文静","海涛","晓彤","泽宇","梦瑶","子涵","书瑶","志远","雅萱","明轩","若彤","嘉怡","俊杰","静怡","一诺","天宇","沐阳","语桐","昊然","玉洁","思琪","振华","若曦","家骏","心怡","书涵","立诚","婉清","卓然","云舒","慧敏","世杰","雨桐","浩然","静文","梓涵","锦程","丹青","守正","维新","晓岚","望舒","青禾","怀瑾","知微","慕白","清和"];
+  var CLASSES = {
+    2023:["思想政治教育2301班","计算机科学与技术2302班","法学2301班","汉语言文学2303班","会计学2302班","数学与应用数学2301班","行政管理2301班"],
+    2024:["行政管理2401班","新闻学2402班","英语2401班","社会学2401班","软件工程2402班","视觉传达设计2401班","马克思主义理论2401班"],
+    2025:["思想政治教育2501班","数据科学与大数据技术2501班","法学2502班","汉语言文学2501班","会计学2501班","人工智能2501班","行政管理2502班"]
+  };
+  var ACTS = [
+    ["党史学习教育专题党课","4"],
+    ["红色教育基地参观（中共一大纪念馆）","6"],
+    ["主题党日：重温入党誓词","2"],
+    ["志愿服务：社区助老行动","4"],
+    ["理论宣讲进班级","3"],
+    ["校运会志愿服务","6"],
+    ["读书会：《习近平谈治国理政》","3"],
+    ["乡村振兴社会调研","8"],
+    ["廉洁教育专题观影","2"],
+    ["迎新志愿服务","6"],
+    ["五四主题团日活动","3"],
+    ["支部大会：发展对象推荐","2"]
+  ];
+  var WEIGHT = {
+    apply:    [["done",.92],["revise",.05],["missing",.03]],
+    report:   [["done",.86],["revise",.10],["missing",.04]],
+    talk:     [["done",.88],["revise",.08],["missing",.04]],
+    cultivate:[["done",.84],["revise",.11],["missing",.05]],
+    cert:     [["done",.93],["revise",.04],["missing",.03]],
+    activity: [["done",.90],["revise",.07],["missing",.03]]
+  };
+  function weighted(rnd, list){
+    var r = rnd(), acc = 0;
+    for(var i=0;i<list.length;i++){ acc += list[i][1]; if(r <= acc) return list[i][0]; }
+    return list[list.length-1][0];
+  }
+  function dayStr(rnd, base, span){
+    var d = new Date(base.getTime() + Math.floor(rnd()*(span||300))*86400000);
+    return d.getFullYear()+"-"+pad2(d.getMonth()+1)+"-"+pad2(d.getDate());
+  }
+
+  var rnd = mulberry32(442);
+  var batches = [
+    { name:"25年上半年—43期", size:8, year:2023, from:[2025,2], prob:2 },
+    { name:"25年下半年—44期", size:8, year:2023, from:[2025,8], prob:2 },
+    { name:"26年上半年—45期", size:8, year:2024, from:[2026,2], prob:1 },
+    { name:"26年下半年—46期", size:8, year:2024, from:[2026,8], prob:1 },
+    { name:"27年上半年—47期", size:8, year:2025, from:[2027,2], prob:1 },
+    { name:"27年下半年—48期", size:8, year:2025, from:[2027,8], prob:1 }
+  ];
+  var used = {}, people = [], gid = 0;
+  var OPER = ["王振华","李文静","张海涛","陈静"];
+
+  batches.forEach(function(b){
+    var startIdx = people.length;
+    for(var i=0;i<b.size;i++){
+      gid++;
+      var name = "", guard = 0;
+      do { name = pick(rnd, SUR) + pick(rnd, GIV); guard++; } while(used[name] && guard < 300);
+      used[name] = 1;
+
+      var stMap = {};
+      MATERIALS.forEach(function(m){ stMap[m.id] = weighted(rnd, WEIGHT[m.id]); });
+
+      /* 活动记录：与「活动参与记录」材料状态保持一致 */
+      var acts = [], an = 3 + Math.floor(rnd()*5), put = {};
+      if(stMap.activity !== "missing"){
+        for(var k=0;k<an;k++){
+          var ai = Math.floor(rnd()*ACTS.length), guard3 = 0;
+          while(put[ai] && guard3 < 20){ ai = Math.floor(rnd()*ACTS.length); guard3++; }
+          put[ai] = 1;
+          acts.push({ date: dayStr(rnd, new Date(b.from[0], b.from[1], 1), 330), title: ACTS[ai][0], hours: Number(ACTS[ai][1]) });
+        }
+        acts.sort(function(x,y){ return x.date < y.date ? 1 : -1; });
+      }
+      var actHours = acts.reduce(function(s,a){ return s + a.hours; }, 0);
+
+      var mat = {};
+      MATERIALS.forEach(function(m){
+        var st = stMap[m.id];
+        var file = st === "missing" ? "" : FILE_NAME[m.id];
+        var note = "";
+        if(m.id === "apply"){
+          note = st === "missing" ? "未提交" : "手写原件扫描件";
+        } else if(m.id === "report"){
+          var c = st === "missing" ? 0 : (st === "revise" ? 2 : 4);
+          note = st === "missing" ? "未提交" : (c + "/4 篇");
+        } else if(m.id === "talk"){
+          var t = st === "missing" ? 0 : (st === "revise" ? 1 : 2);
+          note = st === "missing" ? "未提交" : (t + " 次谈话记录");
+        } else if(m.id === "cultivate"){
+          note = st === "missing" ? "未提交" : "第 1—2 季度考察意见";
+        } else if(m.id === "cert"){
+          note = st === "missing" ? "未提交" : "党校第 " + (12 + (gid % 5)) + " 期结业";
+        } else {
+          note = st === "missing" ? "未提交" : (acts.length + " 次 · " + actHours + " 学时");
+        }
+        mat[m.id] = {
+          status: st,
+          file: file,
+          note: note,
+          updatedAt: st === "missing" ? "" : dayStr(rnd, new Date(b.from[0], b.from[1], 1), 300),
+          updatedBy: st === "missing" ? "" : pick(rnd, OPER)
+        };
+      });
+
+      people.push({
+        id: "p" + gid,
+        seq: pad2(i+1),
+        batch: b.name,
+        name: name,
+        sid: String(b.year) + String(gid).padStart(4,"0"),
+        cls: pick(rnd, CLASSES[b.year]),
+        phone: "1" + pick(rnd,["3","5","7","8","9"]) + String(Math.floor(rnd()*1e9)).padStart(9,"0"),
+        probation: false,
+        probationDate: "",
+        materials: mat,
+        activities: acts
+      });
+    }
+
+    /* 本批预备党员：从材料最完整的成员中标记，仍在原批次内，只是单独分组展示 */
+    var arr = people.slice(startIdx);
+    arr.slice().sort(function(x,y){ return doneCount(y) - doneCount(x); })
+      .slice(0, Math.min(b.prob || 0, arr.length))
+      .forEach(function(q){
+        q.probation = true;
+        q.probationDate = dayStr(rnd, new Date(b.from[0], b.from[1], 1), 420);
+      });
+  });
+
+  return {
+    meta: { org:"红鸥党建工作站", version:3, createdAt: nowStamp(), updatedAt: nowStamp(),
+            batches: batches.map(function(b){ return b.name; }) },
+    people: people
+  };
+}
+
+/* ---------------- 判定函数 ---------------- */
+function matOf(p){ return MATERIALS.map(function(m){ return p.materials[m.id]; }); }
+function isComplete(p){ return MATERIALS.every(function(m){ return p.materials[m.id].status === "done"; }); }
+function hasMissing(p){ return MATERIALS.some(function(m){ return p.materials[m.id].status === "missing"; }); }
+function hasRevise(p){ return MATERIALS.some(function(m){ return p.materials[m.id].status === "revise"; }); }
+function doneCount(p){ return MATERIALS.filter(function(m){ return p.materials[m.id].status === "done"; }).length; }
+function personState(p){
+  if(isComplete(p)) return "ok";
+  if(hasMissing(p)) return "bad";
+  return "warn";
+}
+function personStateText(p){
+  var s = personState(p);
+  return s === "ok" ? "档案齐全" : (s === "bad" ? "待补交" : "待修改");
+}
+function batchList(){
+  if(DB && DB.meta && Array.isArray(DB.meta.batches) && DB.meta.batches.length) return DB.meta.batches.slice();
+  return Array.from(new Set(DB.people.map(function(p){ return p.batch; })));
+}
+function findPerson(id){ return DB.people.find(function(p){ return p.id === id; }); }
+function findMat(id){ return MATERIALS.find(function(m){ return m.id === id; }); }
+
+function pillHTML(status, extra){
+  var s = ST[status] || ST.missing;
+  return '<span class="pill ' + s.cls + (extra ? " " + extra : "") + '"><span class="em">' + s.em + '</span>' + s.label + '</span>';
+}
+function pillBtn(pid, mid, status, extra){
+  var s = ST[status] || ST.missing;
+  return '<button class="pill ' + s.cls + (extra ? " " + extra : "") + '" data-act="status" data-pid="' + pid +
+         '" data-mid="' + mid + '"><span class="em">' + s.em + '</span>' + s.label + '</button>';
+}
+
+/* ---------------- 日志 ---------------- */
+/* pid/pname：本条操作涉及的档案，用于在日志里直接跳转到该人档案 */
+function log(act, detail, pid, pname){
+  LOGS.unshift({
+    ts: nowStamp(), user: CFG.user || "系统", role: CFG.role || "",
+    act: act, detail: detail || "",
+    pid: pid || "", pname: pname || ""
+  });
+  if(LOGS.length > 300) LOGS.length = 300;
+}
+
+/* ---------------- 路由 ---------------- */
+function render(){
+  var raw = location.hash.replace(/^#/, "") || "/";
+  var parts = raw.split("/").filter(Boolean);
+  var seg1 = parts[0] || "home";
+  var seg2 = parts[1] || "";
+
+  closePop();
+  var changed = raw !== currentPath;
+  currentPath = raw;
+
+  if(seg1 === "persons")        viewPersons();
+  else if(seg1 === "person")    viewPerson(seg2);
+  else if(seg1 === "materials") viewMaterials();
+  else if(seg1 === "material")  viewMaterial(seg2);
+  else if(seg1 === "ledger")    viewLedger();
+  else if(seg1 === "logs")      viewLogs();
+  else                          viewHome();
+
+  setNav(seg1);
+  if(changed) window.scrollTo(0, 0);
+}
+
+function setNav(seg1){
+  var map = { home:"home", persons:"persons", person:"persons", materials:"materials", material:"materials", ledger:"ledger", logs:"logs" };
+  var cur = map[seg1] || "home";
+  Array.prototype.forEach.call(document.querySelectorAll("#subnav a"), function(a){
+    a.classList.toggle("on", a.getAttribute("data-nav") === cur);
+  });
+}
+
+/* ---------------- 视图：工作台 ---------------- */
+function viewHome(){
+  var total = DB.people.length, complete = 0, miss = 0, rev = 0;
+  DB.people.forEach(function(p){
+    if(isComplete(p)) complete++;
+    else if(hasMissing(p)) miss++;
+    else rev++;
+  });
+  var batches = batchList();
+
+  var batchRows = batches.map(function(b){
+    var arr = DB.people.filter(function(p){ return p.batch === b; });
+    var d = arr.filter(isComplete).length;
+    return '<div class="elrow"><span>' + esc(b) + '</span><span class="nums">' +
+           '<i class="ok">' + d + '/' + arr.length + '</i></span></div>';
+  }).join("");
+
+  var matRows = MATERIALS.map(function(m){
+    var c = { done:0, revise:0, missing:0 };
+    DB.people.forEach(function(p){ c[p.materials[m.id].status] = (c[p.materials[m.id].status]||0) + 1; });
+    return '<div class="elrow"><span>' + m.icon + " " + esc(m.short) + '</span><span class="nums">' +
+           '<i class="ok">' + c.done + '</i><i class="warn">' + c.revise + '</i><i class="bad">' + c.missing + '</i>' +
+           '</span></div>';
+  }).join("");
+
+  var recent = LOGS.slice(0, 6);
+
+  view.innerHTML =
+  '<div class="pagehead">' +
+    '<div class="crumb"><span>工作台</span><i>/</i><span>总览</span></div>' +
+    '<h2 class="ptitle">党员发展人员档案总览</h2>' +
+    '<p class="pdesc">在册 <b>' + total + '</b> 名党员发展人员（含预备党员），覆盖 <b>' + batches.length + '</b> 个批次；内部资料，请勿外传。</p>' +
+  '</div>' +
+
+  (EDIT ? '<div class="editbar"><span class="et">编辑模式已开启：可新增／删除人员、批量导入整期名单、维护材料明细与活动记录、管理处室批次</span>' +
+    '<span class="ea"><button class="ebtn solid" data-act="import-roster">＋ 批量导入名单</button>' +
+    '<button class="ebtn" data-act="new-person">新增单个人员</button>' +
+    '<button class="ebtn" data-act="batch-manager">批次管理</button></span></div>' : '') +
+
+  '<div class="stats">' +
+    '<div class="stat"><div class="slabel">党员发展人员总数</div><div class="sval">' + total + '<span>人</span></div><div class="snote">' + batches.length + ' 个批次在册</div></div>' +
+    '<div class="stat c-ok"><div class="slabel">材料齐全人数</div><div class="sval">' + complete + '<span>人</span></div><div class="snote">六项材料全部完成</div></div>' +
+    '<div class="stat c-bad"><div class="slabel">待补交人数</div><div class="sval">' + miss + '<span>人</span></div><div class="snote">存在未交材料</div></div>' +
+    '<div class="stat c-warn"><div class="slabel">待修改人数</div><div class="sval">' + rev + '<span>人</span></div><div class="snote">存在需修改材料</div></div>' +
+  '</div>' +
+
+  '<div class="entries">' +
+    '<a class="entry" href="#/persons">' +
+      '<div class="entry-top">' +
+        '<div class="eico">档</div>' +
+        '<div class="etxt"><h3>按人员查看</h3><p>按批次分组，进入个人档案查看全套材料与活动记录</p></div>' +
+        '<span class="earrow">→</span>' +
+      '</div>' +
+      '<div class="entry-list">' + batchRows + '</div>' +
+      '<div class="entry-foot">查看全部 ' + total + ' 份人员档案</div>' +
+    '</a>' +
+    '<a class="entry" href="#/materials">' +
+      '<div class="entry-top">' +
+        '<div class="eico">类</div>' +
+        '<div class="etxt"><h3>按材料类型查看</h3><p>按六类材料横向查看全部期数人员的提交状态</p></div>' +
+        '<span class="earrow">→</span>' +
+      '</div>' +
+      '<div class="entry-list">' + matRows + '</div>' +
+      '<div class="entry-foot">按材料类型查看六类材料状态</div>' +
+    '</a>' +
+  '</div>' +
+
+  '<div class="sec">' +
+    '<div class="sec-h"><h3>最近操作</h3><span class="sp"></span><a class="tinfo" href="#/logs" style="color:#7C2C2E">查看全部 →</a></div>' +
+    '<div class="sec-b flush">' +
+      (recent.length ? logBlock(recent) : '<div class="empty"><div class="e1">暂无操作记录</div><div class="e2">材料状态变更、信息修改等操作将在此留痕</div></div>') +
+    '</div>' +
+  '</div>';
+}
+
+/* ---------------- 视图：按人员 ---------------- */
+function passFilter(p, q, batch){
+  if(batch !== "全部" && p.batch !== batch) return false;
+  if(!q) return true;
+  var s = q.toLowerCase();
+  return p.name.indexOf(q) > -1 || p.sid.indexOf(q) > -1 || p.cls.indexOf(q) > -1 || p.phone.indexOf(q) > -1;
+}
+
+function viewPersons(){
+  var batches = batchList();
+  var probN = DB.people.filter(function(p){ return p.probation; }).length;
+  view.innerHTML =
+  '<div class="pagehead">' +
+    '<div class="crumb"><a href="#/">工作台</a><i>/</i><span>按人员查看</span></div>' +
+    '<div class="hd-row"><h2 class="ptitle">党员发展人员档案</h2>' +
+      (EDIT ? '<div class="page-actions">' +
+        '<button class="ebtn solid" data-act="import-roster">＋ 批量导入名单</button>' +
+        '<button class="ebtn" data-act="new-person">新增单个人员</button>' +
+        '<button class="ebtn" data-act="batch-manager">批次管理</button>' +
+      '</div>' : '') +
+    '</div>' +
+    '<p class="pdesc">共 <b>' + DB.people.length + '</b> 人 · ' + batches.length + ' 个批次' +
+      (probN ? ' · 其中预备党员 <b>' + probN + '</b> 人（单独置顶列出，同时计入各批次）' : '') +
+      '。点击人员卡片查看其全套档案。</p>' +
+  '</div>' +
+  '<div class="toolbar">' +
+    '<input class="inp" id="q" type="text" placeholder="搜索姓名 / 学号 / 班级" value="' + esc(state.q) + '">' +
+    '<select class="inp" id="bsel">' + ["全部"].concat(batches).map(function(b){
+      return '<option value="' + esc(b) + '"' + (state.batch === b ? " selected" : "") + '>' + esc(b) + '</option>';
+    }).join("") + '</select>' +
+    '<span class="tinfo" id="tinfo"></span>' +
+    '<span class="legend"><i class="lgh ok"></i>已完成<i class="lgh warn"></i>修改中<i class="lgh bad"></i>未交</span>' +
+  '</div>' +
+  '<div id="plist"></div>';
+
+  $("#q").addEventListener("input", function(e){ state.q = e.target.value.trim(); paintPersons(); });
+  $("#bsel").addEventListener("change", function(e){ state.batch = e.target.value; paintPersons(); });
+  paintPersons();
+}
+
+function paintPersons(){
+  var list = DB.people.filter(function(p){ return passFilter(p, state.q, state.batch); });
+  $("#tinfo").textContent = "筛选结果 " + list.length + " 人";
+
+  if(!list.length){
+    $("#plist").innerHTML = '<div class="sec"><div class="empty"><div class="e1">未找到匹配的人员</div><div class="e2">请调整姓名关键词或批次筛选条件</div></div></div>';
+    return;
+  }
+
+  var batches = batchList(), html = "";
+
+  /* 预备党员单独置顶分组：这些人同时也属于原批次，后面仍会出现在各自批次里 */
+  var prob = list.filter(function(p){ return p.probation; });
+  if(prob.length){
+    var pk = "__prob__", pc = isCollapsed(pk);
+    html += '<section class="batch prob-batch' + (pc ? " collapsed" : "") + '">' +
+      '<div class="batchhead">' +
+        '<h3 data-act="toggle-batch" data-b="' + pk + '"><span class="bh-term" style="font-size:15px;color:var(--red-800);font-weight:600">预备党员</span><span class="btag">单独列出</span></h3>' +
+        '<span class="bsub">' + prob.length + ' 人 · 仍计入下方各批次统计</span>' +
+        '<button class="bh-toggle" data-act="toggle-batch" data-b="' + pk + '" style="margin-left:auto"><span class="car">▾</span>' + (pc ? "展开" : "收起") + '</button>' +
+      '</div>' +
+      '<div class="pgrid-cards">' + prob.map(function(p){ return personCard(p, true); }).join("") + '</div>' +
+    '</section>';
+  }
+
+  batches.forEach(function(b){
+    var arr = list.filter(function(p){ return p.batch === b; });
+    if(!arr.length) return;
+    var d = arr.filter(isComplete).length;
+    var col = isCollapsed(b);
+    var tools = EDIT
+      ? '<span class="bh-tools">' +
+          '<button class="ebtn mini" data-act="new-person" data-batch="' + esc(b) + '">＋ 添加人员</button>' +
+        '</span>'
+      : '';
+    html += '<section class="batch' + (col ? " collapsed" : "") + '">' +
+      '<div class="batchhead">' +
+        '<h3 data-act="toggle-batch" data-b="' + esc(b) + '">' + batchTitleHTML(b) + '</h3>' +
+        '<span class="bsub">' + arr.length + ' 人 · 档案齐全 ' + d + ' 人</span>' +
+        '<div class="bbar"><i style="width:' + Math.round(d / arr.length * 100) + '%"></i></div>' +
+        tools +
+        '<button class="bh-toggle" data-act="toggle-batch" data-b="' + esc(b) + '"><span class="car">▾</span>' + (col ? "展开" : "收起") + '</button>' +
+      '</div>' +
+      '<div class="pgrid-cards">' + arr.map(function(p){ return personCard(p); }).join("") + '</div>' +
+    '</section>';
+  });
+  $("#plist").innerHTML = html;
+}
+
+function personCard(p, showBatch){
+  var dots = MATERIALS.map(function(m){
+    var it = p.materials[m.id];
+    return '<i class="dot ' + ST[it.status].cls + '" title="' + esc(m.name) + '：' + ST[it.status].label + '"></i>';
+  }).join("");
+  var tools = EDIT
+    ? '<div class="pcard-tools">' +
+        '<button class="ebtn mini" data-act="edit-person" data-pid="' + p.id + '">编辑</button>' +
+        '<button class="ebtn mini" data-act="new-activity" data-pid="' + p.id + '">＋活动</button>' +
+        '<button class="ebtn mini danger" data-act="del-person" data-pid="' + p.id + '" style="margin-left:auto">删除</button>' +
+      '</div>'
+    : '';
+  return '<div class="pcard">' +
+    '<a class="pcard-link" href="#/person/' + p.id + '">' +
+      '<div class="pcard-h"><span class="pname">' + esc(p.name) + '</span>' +
+        '<span class="badge ' + personState(p) + '">' + personStateText(p) + '</span>' +
+        '<span class="pno">No.' + esc(p.seq) + '</span></div>' +
+      '<div class="pmeta">' +
+        (p.probation ? '<span class="pflag" title="预备党员">预</span>' : '') +
+        (showBatch ? esc(p.batch) + ' · ' : '') + esc(p.sid) + ' · ' + esc(p.cls) + '</div>' +
+      '<div class="pfoot"><div class="dots">' + dots + '</div>' +
+        '<span class="pct"><b>' + doneCount(p) + '</b>/6 项</span></div>' +
+    '</a>' + tools +
+  '</div>';
+}
+
+/* ---------------- 视图：个人档案 ---------------- */
+function viewPerson(id){
+  var p = findPerson(id);
+  if(!p){
+    view.innerHTML = '<div class="sec"><div class="empty"><div class="e1">未找到该人员档案</div><div class="e2"><a href="#/persons" style="color:#7C2C2E">← 返回人员列表</a></div></div></div>';
+    return;
+  }
+  var st = personState(p);
+
+  var rows = MATERIALS.map(function(m){
+    var it = p.materials[m.id];
+    var fl = it.files || [];
+    var fileBtn = (it.file || it.link || fl.length)
+      ? '<button class="flink" data-act="file" data-pid="' + p.id + '" data-mid="' + m.id + '">查看附件' + (fl.length ? ' (' + fl.length + ')' : '') + ' ↗</button>'
+      : '<span class="flink off">暂无附件</span>';
+    var editBtn = EDIT
+      ? '<button class="ebtn mini" data-act="edit-material" data-pid="' + p.id + '" data-mid="' + m.id + '">编辑</button>'
+      : '';
+    var chips = fl.length
+      ? '<div class="mfile-chips">' + fl.map(function(f, i){
+          return '<span class="fchip" data-act="open-att" data-pid="' + p.id + '" data-mid="' + m.id + '" data-i="' + i + '" title="' + esc(f.name) + '">' +
+            '<span class="fi">' + fileIcon(f.name, f.type) + '</span>' +
+            '<span class="fn">' + esc(f.name) + '</span>' +
+            (f.size ? '<span class="fsz">' + fmtSize(f.size) + '</span>' : '') +
+          '</span>';
+        }).join("") + '</div>'
+      : '';
+    return '<div class="mrow">' +
+      '<div class="mico">' + m.icon + '</div>' +
+      '<div>' +
+        '<div class="mname">' + esc(m.name) + '</div>' +
+        '<div class="mnote">' + esc(it.note || "—") +
+          (it.updatedAt ? ' · ' + esc(String(it.updatedAt).slice(0,10)) + ' 由 ' + esc(it.updatedBy || "—") + ' 更新' : '') +
+        '</div>' + chips +
+      '</div>' +
+      '<div class="mstatus">' + pillBtn(p.id, m.id, it.status) + '</div>' +
+      '<div class="mfile">' + editBtn + fileBtn + '</div>' +
+    '</div>';
+  }).join("");
+
+  var actListMobile = '<div class="only-mobile"><div class="loglist">' +
+    (p.activities.length
+      ? p.activities.map(function(a, i){
+          return '<div class="logitem"><div class="lt">' + esc(a.date) + ' · ' + a.hours + ' 学时' +
+            (EDIT ? '<span style="float:right;margin-top:-2px">' +
+              '<button class="ebtn mini" data-act="edit-activity" data-pid="' + p.id + '" data-idx="' + i + '">编辑</button> ' +
+              '<button class="ebtn mini danger" data-act="del-activity" data-pid="' + p.id + '" data-idx="' + i + '">删除</button>' +
+            '</span>' : '') +
+            '</div><div class="lc">' + esc(a.title) + '</div></div>';
+        }).join("")
+      : '<div class="empty" style="padding:26px"><div class="e1">暂无活动参与记录</div></div>') +
+    '</div></div>';
+
+  var actRows = p.activities.length
+    ? p.activities.map(function(a, i){
+        return '<tr><td class="dim" style="width:120px">' + esc(a.date) + '</td><td>' + esc(a.title) +
+          '</td><td class="num" style="width:80px">' + a.hours + ' 学时</td>' +
+          (EDIT ? '<td style="width:112px;text-align:right;white-space:nowrap">' +
+            '<button class="ebtn mini" data-act="edit-activity" data-pid="' + p.id + '" data-idx="' + i + '">编辑</button> ' +
+            '<button class="ebtn mini danger" data-act="del-activity" data-pid="' + p.id + '" data-idx="' + i + '">删除</button>' +
+          '</td>' : '') +
+        '</tr>';
+      }).join("")
+    : '<tr><td colspan="' + (EDIT ? 4 : 3) + '" class="dim" style="text-align:center;padding:20px">暂无活动参与记录</td></tr>';
+
+  view.innerHTML =
+  '<div class="pagehead">' +
+    '<div class="crumb"><a href="#/">工作台</a><i>/</i><a href="#/persons">按人员查看</a><i>/</i><span>' + esc(p.name) + '</span></div>' +
+  '</div>' +
+
+  '<div class="profile">' +
+    '<div class="profile-top">' +
+      '<div class="pface">' + esc(p.name.slice(0,1)) + '</div>' +
+      '<div class="pid-txt"><h2>' + esc(p.name) + '</h2><p>' + esc(p.batch) + ' · ' +
+        (p.probation ? '预备党员' + (p.probationDate ? '（' + esc(String(p.probationDate).slice(0,10)) + '）' : '') : '入党积极分子') + '</p></div>' +
+      '<div class="ptags">' +
+        (p.probation ? '<span class="tag probtag">预备党员</span>' : '') +
+        '<span class="badge ' + st + '">' + personStateText(p) + '</span>' +
+        '<span class="tag">材料齐全 ' + doneCount(p) + '/6</span>' +
+        (EDIT
+          ? '<button class="btn" data-act="edit-person" data-pid="' + p.id + '" style="height:28px;padding:0 12px;font-size:12px">编辑信息</button>' +
+            '<button class="ebtn danger" data-act="del-person" data-pid="' + p.id + '" style="height:28px">删除档案</button>'
+          : '') +
+      '</div>' +
+    '</div>' +
+    '<div class="pgrid">' +
+      '<div class="pcell"><span>序号</span><b>' + esc(p.seq) + '</b></div>' +
+      '<div class="pcell"><span>批次</span><b>' + esc(p.batch) + '</b></div>' +
+      '<div class="pcell"><span>姓名</span><b>' + esc(p.name) + '</b></div>' +
+      '<div class="pcell"><span>学号</span><b>' + esc(p.sid) + '</b></div>' +
+      '<div class="pcell"><span>班级</span><b>' + esc(p.cls) + '</b></div>' +
+      '<div class="pcell"><span>联系方式</span><b>' + esc(p.phone) + '</b></div>' +
+    '</div>' +
+  '</div>' +
+
+  '<div class="sec" style="margin-bottom:16px">' +
+    '<div class="sec-h"><h3>档案材料（六项）</h3><span class="sp"></span>' +
+      '<span class="tinfo">' + (EDIT ? '点击状态标签可直接改状态，点「编辑」维护明细' : '点击状态标签可直接修改') + '</span></div>' +
+    '<div class="sec-b flush">' + rows + '</div>' +
+  '</div>' +
+
+  '<div class="sec">' +
+    '<div class="sec-h"><h3>活动参与记录</h3><span class="sp"></span>' +
+      '<span class="tinfo">共 ' + p.activities.length + ' 次 · ' + p.activities.reduce(function(s,a){ return s + a.hours; }, 0) + ' 学时</span>' +
+      (EDIT ? '<button class="ebtn mini" data-act="new-activity" data-pid="' + p.id + '">＋ 新增活动</button>' : '') +
+    '</div>' +
+    '<div class="sec-b flush">' +
+      '<div class="only-desktop"><div class="tw"><table class="mini"><thead><tr><th>活动时间</th><th>活动名称</th><th>学时</th>' +
+        (EDIT ? '<th style="width:112px;text-align:right">操作</th>' : '') +
+      '</tr></thead><tbody>' + actRows + '</tbody></table></div></div>' +
+      actListMobile +
+    '</div>' +
+  '</div>' +
+
+  '<div class="sec" style="margin-top:16px">' +
+    '<div class="sec-h"><h3>该档案操作记录</h3><span class="sp"></span>' +
+      '<span class="tinfo">谁在什么时候改了什么，仅列最近 8 条</span>' +
+      '<a class="btn" href="#/logs" style="height:28px;padding:0 12px;font-size:12px;line-height:26px">全部日志 →</a></div>' +
+    '<div class="sec-b flush">' + personLogBlock(p) + '</div>' +
+  '</div>';
+}
+
+/* 单个人物的操作留痕 */
+function detailHTML(d){
+  return esc(d || "—").replace(/→/g, '<span class="arw">→</span>');
+}
+function personLogBlock(p){
+  var rel = LOGS.filter(function(l){ return l.pid === p.id; }).slice(0, 8);
+  if(!rel.length){
+    return '<div class="empty" style="padding:24px"><div class="e1">暂无操作记录</div>' +
+           '<div class="e2">材料状态变更、信息修改、活动录入都会在此留痕</div></div>';
+  }
+  var table = '<div class="only-desktop"><div class="tw"><table class="mini logtbl"><thead><tr>' +
+    '<th style="width:132px">时间</th><th style="width:112px">操作人</th><th style="width:130px">操作</th><th>内容</th>' +
+    '</tr></thead><tbody>' + rel.map(function(l){
+      return '<tr><td class="dim">' + esc(l.ts) + '</td><td>' + esc(l.user) + (l.role ? '<span class="lrole">' + esc(l.role) + '</span>' : '') +
+             '</td><td>' + esc(l.act) + '</td><td class="dim">' + detailHTML(l.detail) + '</td></tr>';
+    }).join("") + '</tbody></table></div></div>';
+  var mob = '<div class="only-mobile"><div class="loglist">' + rel.map(function(l){
+      return '<div class="logitem"><div class="lt">' + esc(l.ts) + ' · ' + esc(l.user) + '</div>' +
+             '<div class="lc"><b>' + esc(l.act) + '</b>　' + detailHTML(l.detail) + '</div></div>';
+    }).join("") + '</div></div>';
+  return table + mob;
+}
+
+/* ---------------- 视图：材料类型总览 ---------------- */
+function viewMaterials(){
+  var cards = MATERIALS.map(function(m){
+    var c = { done:0, revise:0, missing:0 };
+    DB.people.forEach(function(p){ c[p.materials[m.id].status]++; });
+    var total = DB.people.length;
+    var pct = total ? Math.round(c.done / total * 100) : 0;
+    return '<a class="entry" href="#/material/' + m.id + '">' +
+      '<div class="entry-top">' +
+        '<div class="eico" style="font-size:16px;background:#FBF6F4">' + m.icon + '</div>' +
+        '<div class="etxt"><h3>' + esc(m.name) + '</h3><p>应交 ' + total + ' 份 · 已完成率 ' + pct + '%</p></div>' +
+        '<span class="earrow">→</span>' +
+      '</div>' +
+      '<div class="entry-list">' +
+        '<div class="elrow"><span>已完成</span><span class="nums"><i class="ok">' + c.done + ' 人</i></span></div>' +
+        '<div class="elrow"><span>修改中</span><span class="nums"><i class="warn">' + c.revise + ' 人</i></span></div>' +
+        '<div class="elrow"><span>未交</span><span class="nums"><i class="bad">' + c.missing + ' 人</i></span></div>' +
+      '</div>' +
+      '<div class="entry-foot">查看各批次该材料明细</div>' +
+    '</a>';
+  }).join("");
+
+  view.innerHTML =
+  '<div class="pagehead">' +
+    '<div class="crumb"><a href="#/">工作台</a><i>/</i><span>按材料类型查看</span></div>' +
+    '<h2 class="ptitle">材料类型总览</h2>' +
+    '<p class="pdesc">六类档案材料横向统计，点击进入查看全部期数人员的该项材料状态。</p>' +
+  '</div>' +
+  '<div class="entries" style="grid-template-columns:repeat(auto-fill,minmax(300px,1fr))">' + cards + '</div>';
+}
+
+/* ---------------- 视图：单类材料明细 ---------------- */
+function viewMaterial(mid){
+  var m = findMat(mid);
+  if(!m){ view.innerHTML = '<div class="sec"><div class="empty"><div class="e1">材料类型不存在</div></div></div>'; return; }
+
+  var c = { done:0, revise:0, missing:0 };
+  DB.people.forEach(function(p){ c[p.materials[m.id].status]++; });
+
+  var batches = batchList();
+  view.innerHTML =
+  '<div class="pagehead">' +
+    '<div class="crumb"><a href="#/">工作台</a><i>/</i><a href="#/materials">按材料类型</a><i>/</i><span>' + esc(m.name) + '</span></div>' +
+    '<h2 class="ptitle">' + esc(m.name) + '</h2>' +
+    '<p class="pdesc">应交 <b>' + DB.people.length + '</b> 份 · 已完成 <b>' + c.done + '</b> 人 · 修改中 ' + c.revise + ' 人 · 未交 ' + c.missing + ' 人</p>' +
+  '</div>' +
+  '<div class="toolbar">' +
+    '<input class="inp" id="mq" type="text" placeholder="搜索姓名 / 学号" value="' + esc(state.mq) + '">' +
+    '<select class="inp" id="mbsel">' + ["全部"].concat(batches).map(function(b){
+      return '<option value="' + esc(b) + '"' + (state.mbatch === b ? " selected" : "") + '>' + esc(b) + '</option>';
+    }).join("") + '</select>' +
+    '<span class="tinfo" id="mtinfo"></span>' +
+    '<span class="legend"><i class="lgh ok"></i>已完成<i class="lgh warn"></i>修改中<i class="lgh bad"></i>未交</span>' +
+  '</div>' +
+  '<div class="sec"><div class="sec-b flush"><div class="tw"><table class="tbl-min"><thead><tr>' +
+    '<th style="width:70px">序号</th><th style="width:130px">批次</th><th style="width:90px">姓名</th>' +
+    '<th style="width:110px">学号</th><th>班级</th><th style="width:110px">状态</th>' +
+    '<th style="width:100px">附件</th><th style="width:110px">最近更新</th>' +
+    (EDIT ? '<th style="width:76px">操作</th>' : '') +
+  '</tr></thead><tbody id="mtbody"></tbody></table></div></div></div>';
+
+  $("#mq").addEventListener("input", function(e){ state.mq = e.target.value.trim(); paintMatTable(m.id); });
+  $("#mbsel").addEventListener("change", function(e){ state.mbatch = e.target.value; paintMatTable(m.id); });
+  paintMatTable(m.id);
+}
+
+function sortedPeople(){
+  var bOrder = batchList();
+  return DB.people.slice().sort(function(a,b){
+    var ia = bOrder.indexOf(a.batch), ib = bOrder.indexOf(b.batch);
+    if(ia !== ib) return ia - ib;
+    return a.seq < b.seq ? -1 : 1;
+  });
+}
+
+function paintMatTable(mid){
+  var list = sortedPeople().filter(function(p){ return passFilter(p, state.mq, state.mbatch); });
+  $("#mtinfo").textContent = "筛选结果 " + list.length + " 人";
+  if(!list.length){
+    $("#mtbody").innerHTML = '<tr><td colspan="' + (EDIT ? 9 : 8) + '" style="text-align:center;padding:36px;color:#9A9188">未找到匹配记录</td></tr>';
+    return;
+  }
+  $("#mtbody").innerHTML = list.map(function(p){
+    var it = p.materials[mid];
+    return '<tr>' +
+      '<td class="num">' + esc(p.seq) + '</td>' +
+      '<td class="dim">' + esc(p.batch) + '</td>' +
+      '<td class="nm"><a href="#/person/' + p.id + '" style="border-bottom:1px solid #E5D2CD">' + esc(p.name) + '</a></td>' +
+      '<td class="dim">' + esc(p.sid) + '</td>' +
+      '<td class="dim">' + esc(p.cls) + '</td>' +
+      '<td>' + pillBtn(p.id, mid, it.status, "sm") + '</td>' +
+      '<td>' + ((it.file || it.link)
+        ? '<button class="flink" data-act="file" data-pid="' + p.id + '" data-mid="' + mid + '">查看 ↗</button>'
+        : '<span class="flink off">无</span>') + '</td>' +
+      '<td class="dim">' + (it.updatedAt ? esc(String(it.updatedAt).slice(0,10)) : "—") + '</td>' +
+      (EDIT ? '<td><button class="ebtn mini" data-act="edit-material" data-pid="' + p.id + '" data-mid="' + mid + '">编辑</button></td>' : '') +
+    '</tr>';
+  }).join("");
+}
+
+/* ---------------- 视图：总台账 ---------------- */
+function viewLedger(){
+  var c = { done:0, revise:0, missing:0 };
+  DB.people.forEach(function(p){
+    MATERIALS.forEach(function(m){ c[p.materials[m.id].status]++; });
+  });
+
+  view.innerHTML =
+  '<div class="pagehead">' +
+    '<div class="crumb"><a href="#/">工作台</a><i>/</i><span>总台账</span></div>' +
+    '<h2 class="ptitle">积极分子档案总台账</h2>' +
+    '<p class="pdesc">共 <b>' + DB.people.length + '</b> 人 × 6 项材料，合计 ' + (DB.people.length*6) + ' 条记录；已完成 ' + c.done + ' · 修改中 ' + c.revise + ' · 未交 ' + c.missing + '。</p>' +
+  '</div>' +
+  '<div class="toolbar">' +
+    '<input class="inp" id="lq" type="text" placeholder="搜索姓名 / 学号" value="' + esc(state.lq) + '">' +
+    '<select class="inp" id="lbsel">' + ["全部"].concat(batchList()).map(function(b){
+      return '<option value="' + esc(b) + '"' + (state.lbatch === b ? " selected" : "") + '>' + esc(b) + '</option>';
+    }).join("") + '</select>' +
+    '<span class="tinfo" id="ltinfo"></span>' +
+    '<span class="sp" style="flex:1"></span>' +
+    (EDIT ? '<button class="ebtn solid" data-act="new-person">＋ 新增人员</button>' : '') +
+    '<button class="btn primary" data-act="export-csv">导出台账 CSV</button>' +
+    '<button class="btn" data-act="export-json">导出数据快照</button>' +
+  '</div>' +
+  '<div class="sec"><div class="sec-b flush"><div class="tw"><table class="tbl-ledger"><thead><tr>' +
+    '<th style="width:56px">序号</th><th style="width:120px">批次</th><th style="width:78px">姓名</th><th style="width:100px">学号</th>' +
+    MATERIALS.map(function(m){ return '<th style="width:96px">' + esc(m.short) + '</th>'; }).join("") +
+    '<th style="width:72px">齐全度</th>' +
+    (EDIT ? '<th style="width:66px">操作</th>' : '') +
+  '</tr></thead><tbody id="ltbody"></tbody></table></div></div></div>';
+
+  $("#lq").addEventListener("input", function(e){ state.lq = e.target.value.trim(); paintLedger(); });
+  $("#lbsel").addEventListener("change", function(e){ state.lbatch = e.target.value; paintLedger(); });
+  paintLedger();
+}
+
+function paintLedger(){
+  var list = sortedPeople().filter(function(p){ return passFilter(p, state.lq, state.lbatch); });
+  $("#ltinfo").textContent = "筛选结果 " + list.length + " 人";
+  if(!list.length){
+    $("#ltbody").innerHTML = '<tr><td colspan="' + (EDIT ? 12 : 11) + '" style="text-align:center;padding:36px;color:#9A9188">未找到匹配记录</td></tr>';
+    return;
+  }
+  $("#ltbody").innerHTML = list.map(function(p){
+    return '<tr>' +
+      '<td class="num">' + esc(p.seq) + '</td>' +
+      '<td class="dim">' + esc(p.batch) + '</td>' +
+      '<td class="nm"><a href="#/person/' + p.id + '" style="border-bottom:1px solid #E5D2CD">' + esc(p.name) + '</a></td>' +
+      '<td class="dim">' + esc(p.sid) + '</td>' +
+      MATERIALS.map(function(m){
+        return '<td>' + pillBtn(p.id, m.id, p.materials[m.id].status, "sm") + '</td>';
+      }).join("") +
+      '<td class="dim">' + doneCount(p) + '/6</td>' +
+      (EDIT ? '<td><button class="ebtn mini" data-act="edit-person" data-pid="' + p.id + '">编辑</button></td>' : '') +
+    '</tr>';
+  }).join("");
+}
+
+/* ---------------- 日志渲染 ---------------- */
+function logBlock(rows, withDel){
+  rows = (rows || []).map(function(x){ return (x && x.l) ? x : { l: x, i: -1 }; });
+  var table = '<div class="only-desktop"><div class="tw"><table class="mini logtbl"><thead><tr>' +
+    '<th style="width:132px">时间</th><th style="width:94px">操作人</th><th style="width:126px">操作</th>' +
+    '<th style="width:76px">涉及人员</th><th>变更内容</th>' +
+    (withDel ? '<th style="width:58px"></th>' : '') +
+    '</tr></thead><tbody>' + rows.map(function(o){
+      var l = o.l;
+      var who = (l.pid && findPerson(l.pid))
+        ? '<a class="plink" href="#/person/' + l.pid + '">' + esc(l.pname || "档案") + '</a>'
+        : (l.pname ? '<span>' + esc(l.pname) + '</span>' : '<span class="dim">—</span>');
+      return '<tr><td class="dim">' + esc(l.ts) + '</td>' +
+             '<td>' + esc(l.user) + (l.role ? '<span class="lrole">' + esc(l.role) + '</span>' : '') + '</td>' +
+             '<td>' + esc(l.act) + '</td>' +
+             '<td>' + who + '</td>' +
+             '<td class="dim ldet">' + detailHTML(l.detail) + '</td>' +
+             (withDel ? '<td><button class="ebtn mini danger" data-act="del-log" data-idx="' + o.i + '">删除</button></td>' : '') +
+             '</tr>';
+    }).join("") + '</tbody></table></div></div>';
+
+  var listHTML = '<div class="only-mobile"><div class="loglist">' + rows.map(function(o){
+      var l = o.l;
+      var who = (l.pid && findPerson(l.pid))
+        ? '<a class="plink" href="#/person/' + l.pid + '">' + esc(l.pname || "档案") + '</a>'
+        : (l.pname ? esc(l.pname) : "");
+      return '<div class="logitem"><div class="lt">' + esc(l.ts) + ' · ' + esc(l.user) +
+             (who ? ' · ' + who : '') +
+             (withDel ? '<button class="ebtn mini danger" data-act="del-log" data-idx="' + o.i + '" style="float:right;margin-top:-2px">删除</button>' : '') +
+             '</div><div class="lc"><b>' + esc(l.act) + '</b>　' + detailHTML(l.detail) + '</div></div>';
+    }).join("") + '</div></div>';
+
+  return table + listHTML;
+}
+
+/* 日志筛选：操作人 + 操作类型 + 关键字 */
+function logUsers(){
+  var m = {};
+  LOGS.forEach(function(l){ if(l.user) m[l.user] = 1; });
+  return Object.keys(m);
+}
+function logActs(){
+  var m = {};
+  LOGS.forEach(function(l){ if(l.act) m[l.act] = 1; });
+  return Object.keys(m);
+}
+function filteredLogs(){
+  var q = (state.logQ || "").toLowerCase();
+  return LOGS.map(function(l, i){ return { l: l, i: i }; }).filter(function(o){
+    var l = o.l;
+    if(state.logUser !== "全部" && l.user !== state.logUser) return false;
+    if(state.logAct !== "全部" && l.act !== state.logAct) return false;
+    if(!q) return true;
+    return String(l.pname||"").toLowerCase().indexOf(q) > -1 ||
+           String(l.detail||"").toLowerCase().indexOf(q) > -1 ||
+           String(l.act||"").toLowerCase().indexOf(q) > -1 ||
+           String(l.user||"").toLowerCase().indexOf(q) > -1;
+  });
+}
+
+/* ---------------- 视图：操作日志 ---------------- */
+function viewLogs(){
+  var users = logUsers(), acts = logActs();
+  view.innerHTML =
+  '<div class="pagehead">' +
+    '<div class="crumb"><a href="#/">工作台</a><i>/</i><span>操作日志</span></div>' +
+    '<h2 class="ptitle">操作日志</h2>' +
+    '<p class="pdesc">每条记录都保留「谁 · 什么时候 · 对谁 · 改了什么」，可按操作人或操作类型筛选，点人名直接跳到该份档案（保留最近 300 条）。</p>' +
+  '</div>' +
+  '<div class="toolbar">' +
+    '<input class="inp" id="logQ" type="text" placeholder="搜索姓名 / 变更内容" value="' + esc(state.logQ) + '">' +
+    '<select class="inp" id="logUser">' +
+      '<option value="全部">全部操作人</option>' +
+      users.map(function(u){ return '<option value="' + esc(u) + '"' + (state.logUser === u ? " selected" : "") + '>' + esc(u) + '</option>'; }).join("") +
+    '</select>' +
+    '<select class="inp" id="logAct">' +
+      '<option value="全部">全部操作类型</option>' +
+      acts.map(function(a){ return '<option value="' + esc(a) + '"' + (state.logAct === a ? " selected" : "") + '>' + esc(a) + '</option>'; }).join("") +
+    '</select>' +
+    '<span class="tinfo" id="loginfo"></span>' +
+    '<span class="sp" style="flex:1"></span>' +
+    (EDIT ? '<span class="tinfo">编辑模式下可逐条删除</span>' : '') +
+    '<button class="btn danger" data-act="clear-logs">清空日志</button>' +
+  '</div>' +
+  '<div class="sec"><div class="sec-b flush" id="logbody"></div></div>';
+
+  $("#logQ").addEventListener("input", function(e){ state.logQ = e.target.value.trim(); paintLogs(); });
+  $("#logUser").addEventListener("change", function(e){ state.logUser = e.target.value; paintLogs(); });
+  $("#logAct").addEventListener("change", function(e){ state.logAct = e.target.value; paintLogs(); });
+  paintLogs();
+}
+
+function paintLogs(){
+  var rows = filteredLogs();
+  var box = $("#logbody");
+  if(!box) return;
+  $("#loginfo").textContent = "共 " + LOGS.length + " 条" + (rows.length !== LOGS.length ? " · 筛选出 " + rows.length + " 条" : "");
+  box.innerHTML = rows.length
+    ? logBlock(rows, EDIT)
+    : '<div class="empty"><div class="e1">没有匹配的记录</div><div class="e2">换个操作人或关键词再试</div></div>';
+}
+
+/* ---------------- 状态修改 ---------------- */
+var popEl = null;
+function closePop(){
+  if(popEl){ popEl.remove(); popEl = null; }
+  var rb = $("#urole");
+  if(rb) rb.classList.remove("on");
+}
+
+function openStatusPop(anchor, pid, mid){
+  closePop();
+  var p = findPerson(pid); if(!p) return;
+  var m = findMat(mid); if(!m) return;
+  var cur = p.materials[mid].status;
+
+  var el = document.createElement("div");
+  el.className = "pop";
+  el.innerHTML = '<div class="pop-title">' + esc(m.name) + ' · ' + esc(p.name) + '</div>' +
+    Object.keys(ST).map(function(k){
+      return '<button data-set="' + k + '" class="' + (cur === k ? "cur" : "") + '">' +
+        '<span class="em">' + ST[k].em + '</span><span>' + ST[k].label + '</span></button>';
+    }).join("");
+  document.body.appendChild(el);
+  popEl = el;
+
+  var r = anchor.getBoundingClientRect();
+  var w = el.offsetWidth, h = el.offsetHeight;
+  var left = Math.min(Math.max(8, r.left + r.width/2 - w/2), window.innerWidth - w - 8);
+  var top  = r.bottom + 6;
+  if(top + h > window.innerHeight - 8) top = Math.max(8, r.top - h - 6);
+  el.style.left = left + "px";
+  el.style.top  = top + "px";
+
+  Array.prototype.forEach.call(el.querySelectorAll("[data-set]"), function(b){
+    b.addEventListener("click", function(){
+      var target = b.getAttribute("data-set");
+      closePop();
+      setStatus(pid, mid, target);
+    });
+  });
+}
+
+function setStatus(pid, mid, st){
+  var p = findPerson(pid); if(!p) return;
+  var m = findMat(mid); if(!m) return;
+  var it = p.materials[mid];
+  if(it.status === st) return;
+
+  it.status = st;
+  if(st === "missing"){
+    it.file = "";
+    it.note = "未提交";
+  }else{
+    if(!it.file) it.file = FILE_NAME[mid];
+    if(!it.note || it.note === "未提交") it.note = st === "revise" ? "退回修改中" : "已归档";
+  }
+  it.updatedAt = nowStamp();
+  it.updatedBy = CFG.user;
+
+  log("修改材料状态", m.name + " → " + ST[st].label, p.id, p.name);
+  saveAll();
+  render();
+  toast(p.name + " · " + m.name + " 已标记为「" + ST[st].label + "」");
+}
+
+/* ---------------- 附件跳转资料库 ---------------- */
+function joinURL(base, parts){
+  var b = String(base).replace(/\/+$/, "");
+  return b + "/" + parts.map(function(x){ return encodeURIComponent(x); }).join("/");
+}
+function openFile(pid, mid){
+  var p = findPerson(pid); if(!p) return;
+  var it = p.materials[mid];
+  var fl = (it && it.files) || [];
+  if(fl.length && fl[0].data){ openAttachment(pid, mid, 0); return; }
+  if(!it || (!it.file && !it.link)){ toast("该材料暂无电子附件"); return; }
+  if(it.link){
+    window.open(it.link, "_blank", "noopener");
+    log("打开附件", (it.file || it.link), p.id, p.name);
+    saveAll();
+    return;
+  }
+  if(!CFG.base){
+    openSettings("尚未配置 WorkBuddy 资料库地址，请先填写资料库根地址后再打开附件。");
+    return;
+  }
+  var url = joinURL(CFG.base, [p.batch, p.name, it.file]);
+  window.open(url, "_blank", "noopener");
+  log("打开附件", it.file, p.id, p.name);
+  saveAll();
+}
+
+/* ---------------- 导出 ---------------- */
+function download(blob, filename){
+  var a = document.createElement("a");
+  a.href = URL.createObjectURL(blob);
+  a.download = filename;
+  document.body.appendChild(a);
+  a.click();
+  setTimeout(function(){ URL.revokeObjectURL(a.href); a.remove(); }, 600);
+}
+function csvCell(v){
+  var s = String(v == null ? "" : v);
+  if(/^[=+\-@]/.test(s)) s = "'" + s;
+  return '"' + s.replace(/"/g, '""') + '"';
+}
+function exportCSV(){
+  var head = ["序号","批次","姓名","学号","班级","联系方式"]
+    .concat(MATERIALS.map(function(m){ return m.name; }))
+    .concat(["齐全项","材料状态","最近更新"]);
+  var rows = sortedPeople().map(function(p){
+    return [p.seq, p.batch, p.name, p.sid, p.cls, p.phone]
+      .concat(MATERIALS.map(function(m){ return ST[p.materials[m.id].status].label; }))
+      .concat([doneCount(p) + "/6", personStateText(p),
+        String(p.materials[MED(p)].updatedAt || "").slice(0,10)]);
+  });
+  var csv = "\uFEFF" + [head].concat(rows).map(function(r){ return r.map(csvCell).join(","); }).join("\r\n");
+  download(new Blob([csv], { type:"text/csv;charset=utf-8" }), "红鸥-积极分子档案台账-" + dateStamp() + ".csv");
+  log("导出台账", "导出 CSV · " + DB.people.length + " 人");
+  saveAll();
+  toast("台账已导出（CSV，可用 Excel 打开）");
+}
+function MED(p){
+  /* 取最后更新时间：遍历六项材料取最大 */
+  var best = "", bestId = "apply";
+  MATERIALS.forEach(function(m){
+    var u = p.materials[m.id].updatedAt || "";
+    if(u > best){ best = u; bestId = m.id; }
+  });
+  return bestId;
+}
+function exportJSON(){
+  var payload = { meta: DB.meta, people: DB.people, logs: LOGS, exportedAt: nowStamp(), org: "红鸥党建工作站" };
+  download(new Blob([JSON.stringify(payload, null, 2)], { type:"application/json;charset=utf-8" }),
+    "红鸥-档案数据快照-" + dateStamp() + ".json");
+  log("导出快照", "JSON 快照 · " + DB.people.length + " 人");
+  saveAll();
+  toast("数据快照已导出，可上传至资料库备份");
+}
+
+/* ---------------- 弹窗 ---------------- */
+function openModal(title, body, footer, wide){
+  var root = $("#modalRoot");
+  root.innerHTML = '<div class="mask" id="mask"><div class="modal' + (wide ? " wide" : "") + '" role="dialog">' +
+    '<div class="modal-h"><h3>' + title + '</h3><button class="x" data-act="close-modal">×</button></div>' +
+    '<div class="modal-b">' + body + '</div>' +
+    (footer ? '<div class="modal-f">' + footer + '</div>' : '') +
+  '</div></div>';
+  $("#mask").addEventListener("click", function(e){ if(e.target.id === "mask") closeModal(); });
+}
+function closeModal(){ $("#modalRoot").innerHTML = ""; }
+
+function openSettings(notice){
+  var body =
+    (notice ? '<p class="hint" style="margin-bottom:14px;color:#9C3A34">' + esc(notice) + '</p>' : "") +
+    '<div class="field"><label>当前操作人（协同编辑署名）</label>' +
+      '<input class="inp" id="setUser" type="text" value="' + esc(CFG.user) + '">' +
+      '<p class="hint">修改材料状态、编辑人员信息时将以此名称留痕，便于多人协同时追溯。</p></div>' +
+    '<div class="field"><label>当前身份</label>' +
+      '<select class="inp" id="setRole">' +
+        ROLES.map(function(r){
+          return '<option value="' + esc(r.k) + '"' + (CFG.role === r.k ? " selected" : "") + '>' + esc(r.k) + '</option>';
+        }).join("") +
+      '</select>' +
+      '<p class="hint">与顶栏姓名后的身份标签同步，随时可切换，切换会写入操作日志。</p></div>' +
+    '<div class="field"><label>WorkBuddy 资料库根地址</label>' +
+      '<input class="inp" id="setBase" type="text" placeholder="https://workbuddy.cn/space/hongou-dangan" value="' + esc(CFG.base) + '">' +
+      '<p class="hint">配置后，材料附件按「根地址 / 批次 / 姓名 / 文件名」拼装路径，在新窗口打开对应 PDF 档案。</p></div>' +
+    '<div class="divider"></div>' +
+    '<div class="field" style="margin-bottom:0"><label>数据与协同</label>' +
+      '<div class="opgrid">' +
+        '<button class="btn" data-act="export-json">导出数据快照</button>' +
+        '<button class="btn" data-act="import-json">导入数据快照</button>' +
+        '<button class="btn" data-act="export-csv">导出 CSV 台账</button>' +
+        '<button class="btn danger" data-act="reset-data">恢复演示数据</button>' +
+      '</div>' +
+      '<p class="hint">档案数据保存在本机浏览器（localStorage）。多人协同时，由一人导出快照上传至 WorkBuddy 资料库，其他人下载后「导入数据快照」即可同步；操作日志随状态变更自动生成。</p>' +
+    '</div>' +
+    '<input type="file" id="impFile" accept=".json,application/json" class="hidden">';
+
+  openModal("工作台设置", body,
+    '<button class="btn" data-act="close-modal">取消</button>' +
+    '<button class="btn primary" data-act="save-settings">保存设置</button>');
+
+  $("#impFile").addEventListener("change", function(e){
+    var f = e.target.files && e.target.files[0];
+    if(f) importJSON(f);
+  });
+}
+
+/* ---------------- 人员 / 材料 / 活动编辑见下方「编辑模式」区块 ---------------- */
+
+/* ---------------- 编辑模式 ---------------- */
+function setEdit(on){
+  EDIT = !!on;
+  document.body.classList.toggle("edit-mode", EDIT);
+  paintEditToggle();
+  closePop();
+  render();
+  toast(EDIT ? "已进入编辑模式，可维护档案数据" : "已退出编辑模式，当前为只读浏览");
+}
+function paintEditToggle(){
+  var b = $("#editToggle");
+  if(!b) return;
+  b.classList.toggle("on", EDIT);
+  b.innerHTML = '<i class="sw"></i>' +
+    '<span class="lf">' + (EDIT ? "编辑中" : "编辑模式") + '</span>' +
+    '<span class="ls">' + (EDIT ? "编辑中" : "编辑") + '</span>';
+}
+
+/* ---------------- 人员增删改 ---------------- */
+function nextPersonId(){
+  var max = 0;
+  DB.people.forEach(function(p){
+    var n = parseInt(String(p.id).replace(/[^0-9]/g, ""), 10);
+    if(!isNaN(n) && n > max) max = n;
+  });
+  return "p" + (max + 1);
+}
+
+function openPersonEditor(pid, preBatch){
+  var p = pid ? findPerson(pid) : null;
+  if(pid && !p){ toast("人员不存在"); return; }
+  var isNew = !p;
+  var batches = batchList();
+  if(!batches.length) batches = ["未分期"];
+  var curBatch = p ? p.batch
+    : (preBatch && batches.indexOf(preBatch) > -1 ? preBatch
+      : (state.batch !== "全部" && batches.indexOf(state.batch) > -1 ? state.batch : batches[0]));
+
+  var body =
+    '<div class="field"><label>批次 *</label><select class="inp" id="eBatch">' +
+      batches.map(function(b){
+        return '<option value="' + esc(b) + '"' + (b === curBatch ? " selected" : "") + '>' + esc(b) + '</option>';
+      }).join("") +
+    '</select></div>' +
+    '<div class="field"><label>序号</label><input class="inp" id="eSeq" type="text" placeholder="如 05，留空自动生成" value="' + esc(p ? p.seq : "") + '"></div>' +
+    '<div class="field"><label>姓名 *</label><input class="inp" id="eName" type="text" placeholder="请输入姓名" value="' + esc(p ? p.name : "") + '"></div>' +
+    '<div class="field"><label>学号 *</label><input class="inp" id="eSid" type="text" placeholder="请输入学号" value="' + esc(p ? p.sid : "") + '"></div>' +
+    '<div class="field"><label>班级</label><input class="inp" id="eCls" type="text" placeholder="如 思想政治教育2401班" value="' + esc(p ? p.cls : "") + '"></div>' +
+    '<div class="field"><label>联系方式</label><input class="inp" id="ePhone" type="text" placeholder="11 位手机号" value="' + esc(p ? p.phone : "") + '"></div>' +
+    '<div class="field" style="margin-bottom:0"><label>身份</label>' +
+      '<label class="chk"><input type="checkbox" id="eProb"' + (p && p.probation ? " checked" : "") + '> 已列为预备党员</label>' +
+      '<p class="hint">勾选后该人仍计入本批积极分子，同时在人员页顶部的「预备党员」分组中单独列出。</p></div>';
+
+  var footer = '<button class="btn" data-act="close-modal">取消</button>' +
+    (isNew ? '' : '<button class="btn danger" data-act="del-person" data-pid="' + p.id + '">删除档案</button>') +
+    '<button class="btn primary" data-act="save-person" data-pid="' + (p ? p.id : "") + '">' + (isNew ? "创建档案" : "保存") + '</button>';
+
+  openModal(isNew ? "新增人员档案" : "编辑基础信息", body, footer);
+}
+
+function savePerson(pid){
+  var isNew = !pid;
+  var p = isNew ? null : findPerson(pid);
+  if(!isNew && !p){ toast("人员不存在"); return; }
+
+  var batch = $("#eBatch").value;
+  var seq   = $("#eSeq").value.trim();
+  var name  = $("#eName").value.trim();
+  var sid   = $("#eSid").value.trim();
+  var cls   = $("#eCls").value.trim();
+  var ph    = $("#ePhone").value.trim();
+  var probEl = $("#eProb");
+  var prob  = !!(probEl && probEl.checked);
+
+  if(!name){ toast("请填写姓名"); return; }
+  if(!sid){ toast("请填写学号"); return; }
+  var dup = DB.people.some(function(x){ return x.sid === sid && (!p || x.id !== p.id); });
+  if(dup){ toast("学号 " + sid + " 已存在，请核对"); return; }
+
+  if(isNew){
+    if(DB.meta.batches.indexOf(batch) < 0) DB.meta.batches.push(batch);
+    if(!seq) seq = pad2(DB.people.filter(function(x){ return x.batch === batch; }).length + 1);
+    var np = { id: nextPersonId(), seq: seq, batch: batch, name: name, sid: sid, cls: cls, phone: ph,
+               probation: prob, probationDate: prob ? dateStamp() : "",
+               materials: {}, activities: [] };
+    MATERIALS.forEach(function(m){
+      np.materials[m.id] = { status:"missing", file:"", note:"未提交", updatedAt:"", updatedBy:"", files:[] };
+    });
+    DB.people.push(np);
+    log("新增人员档案", "学号 " + sid + " · 批次 " + batch, np.id, name);
+    saveAll(); closeModal(); render();
+    toast("已新增 " + name + " 的档案，材料默认为未交");
+    return;
+  }
+
+  var changes = [];
+  if(batch !== p.batch) changes.push("批次 " + p.batch + "→" + batch);
+  if(seq && seq !== p.seq) changes.push("序号 " + p.seq + "→" + seq);
+  if(name !== p.name) changes.push("姓名 " + p.name + "→" + name);
+  if(sid !== p.sid)   changes.push("学号 " + p.sid + "→" + sid);
+  if(cls !== p.cls)   changes.push("班级 " + p.cls + "→" + cls);
+  if(ph !== p.phone)  changes.push("联系方式 " + p.phone + "→" + ph);
+  if(prob !== !!p.probation) changes.push("身份 " + (p.probation ? "预备党员" : "入党积极分子") + "→" + (prob ? "预备党员" : "入党积极分子"));
+  if(!changes.length){ closeModal(); toast("未做任何修改"); return; }
+
+  p.batch = batch; if(seq) p.seq = seq;
+  p.name = name; p.sid = sid; p.cls = cls; p.phone = ph;
+  if(prob !== !!p.probation){
+    p.probation = prob;
+    p.probationDate = prob ? (p.probationDate || dateStamp()) : "";
+  }
+  if(DB.meta.batches.indexOf(batch) < 0) DB.meta.batches.push(batch);
+  log("编辑基础信息", changes.join("；"), p.id, name);
+  saveAll(); closeModal(); render();
+  toast("基础信息已更新");
+}
+
+function deletePerson(pid){
+  var p = findPerson(pid); if(!p) return;
+  if(!window.confirm("确认删除「" + p.name + "」（" + p.batch + "）的全部档案？\n六项材料与活动记录将一并移除，且不可撤销。")) return;
+  DB.people = DB.people.filter(function(x){ return x.id !== pid; });
+  log("删除人员档案", "批次 " + p.batch + " · " + p.sid + " · 六项材料及活动记录已移除", "", p.name);
+  saveAll(); closeModal();
+  if(location.hash.indexOf("/person/" + pid) > -1) location.hash = "#/persons";
+  render();
+  toast("已删除 " + p.name + " 的档案");
+}
+
+/* ---------------- 材料条目编辑 ---------------- */
+/* 当前材料弹窗内的附件草稿（保存时才写回材料） */
+var MATE_FILES = [];
+var MATE_BUSY = 0;
+var MAT_MAX = 2 * 1024 * 1024;   /* 单份文件内嵌上限 2MB，超过仅记录文件名 */
+var MAT_ACCEPT = ".doc,.docx,.xls,.xlsx,.ppt,.pptx,.pdf,.jpg,.jpeg,.png,.gif,.webp,.bmp,.txt,.csv";
+
+function fmtSize(n){
+  if(!n) return "";
+  if(n < 1024) return n + "B";
+  if(n < 1048576) return Math.round(n / 1024) + "KB";
+  return (n / 1048576).toFixed(1) + "MB";
+}
+function fileIcon(name, type){
+  var e = String(name || "").split(".").pop().toLowerCase();
+  if(/^(jpg|jpeg|png|gif|webp|bmp)$/.test(e) || /^image\//.test(type || "")) return "🖼";
+  if(/^(doc|docx)$/.test(e)) return "📄";
+  if(/^(xls|xlsx|csv)$/.test(e)) return "📊";
+  if(/^(ppt|pptx)$/.test(e)) return "📽";
+  if(e === "pdf") return "📕";
+  return "📎";
+}
+function renderMatFileList(){
+  var box = $("#mFileList");
+  if(!box) return;
+  if(!MATE_FILES.length){ box.innerHTML = '<span class="fempty">尚未添加附件</span>'; return; }
+  box.innerHTML = MATE_FILES.map(function(f, i){
+    return '<span class="fchip' + (f.data ? " new" : "") + '" title="' + esc(f.name) + '">' +
+      '<span class="fi">' + fileIcon(f.name, f.type) + '</span>' +
+      '<span class="fn">' + esc(f.name) + '</span>' +
+      (f.size ? '<span class="fsz">' + fmtSize(f.size) + '</span>' : '') +
+      (f.big ? '<span class="fsz">过大</span>' : '') +
+      '<button class="fx" data-act="rm-mat-file" data-i="' + i + '" title="移除">×</button>' +
+    '</span>';
+  }).join("") + (MATE_BUSY ? '<span class="fempty">读取中…</span>' : "");
+}
+function addMatFiles(fl){
+  var arr = Array.prototype.slice.call(fl || []);
+  if(!arr.length) return;
+  arr.forEach(function(f){
+    if(f.size > MAT_MAX){
+      MATE_FILES.push({ name:f.name, type:f.type || "", size:f.size, data:"", big:true });
+      toast("「" + f.name + "」超过 2MB，仅记录文件名，可改用资料库直链");
+      return;
+    }
+    var rec = { name:f.name, type:f.type || "", size:f.size, data:"" };
+    MATE_FILES.push(rec);
+    MATE_BUSY++;
+    try{
+      var r = new FileReader();
+      r.onload = function(){ rec.data = String(r.result || ""); MATE_BUSY--; renderMatFileList(); };
+      r.onerror = function(){ MATE_BUSY--; renderMatFileList(); };
+      r.readAsDataURL(f);
+    }catch(e){ MATE_BUSY--; }
+  });
+  renderMatFileList();
+}
+
+function openMaterialEditor(pid, mid){
+  var p = findPerson(pid), m = findMat(mid);
+  if(!p || !m) return;
+  var it = p.materials[mid];
+  MATE_FILES = (it.files || []).map(function(f){
+    return { name:f.name, type:f.type || "", size:f.size || 0, data:f.data || "" };
+  });
+  MATE_BUSY = 0;
+
+  var body =
+    '<div class="field"><label>材料状态</label><select class="inp" id="mStatus">' +
+      Object.keys(ST).map(function(k){
+        return '<option value="' + k + '"' + (it.status === k ? " selected" : "") + '>' + ST[k].em + "  " + ST[k].label + '</option>';
+      }).join("") +
+    '</select></div>' +
+    '<div class="field"><label>备注 / 份数</label><input class="inp" id="mNote" type="text" placeholder="如 4/4 篇、2 次谈话记录" value="' + esc(it.note || "") + '"></div>' +
+    '<div class="field"><label>附件（可上传多份）</label>' +
+      '<div class="fup" id="mDrop"><b>点击选择文件</b>　或把文件拖到此区域' +
+        '<div class="fup-t">支持 Word / Excel / PPT / PDF / JPG / PNG / GIF 等，单份 ≤ 2MB（超出仅记录文件名）</div></div>' +
+      '<input type="file" id="mFiles" multiple accept="' + MAT_ACCEPT + '" class="hidden">' +
+      '<div class="mfile-chips" id="mFileList" style="margin-top:8px"></div>' +
+    '</div>' +
+    '<div class="field"><label>附件文件名（兼容资料库路径，可选）</label><input class="inp" id="mFile" type="text" placeholder="如 01_入党申请书.pdf" value="' + esc(it.file || "") + '">' +
+      '<p class="hint">按「资料库根地址 / 批次 / 姓名 / 文件名」拼装路径打开；不上传文件时也可只登记文件名。</p></div>' +
+    '<div class="field" style="margin-bottom:0"><label>附件直链（可选，优先使用）</label><input class="inp" id="mLink" type="text" placeholder="https://..." value="' + esc(it.link || "") + '">' +
+      '<p class="hint">填写后附件直接打开该链接；状态改为「未交」时附件信息会自动清空。</p></div>';
+
+  openModal(m.name + " · " + p.name, body,
+    '<button class="btn" data-act="close-modal">取消</button>' +
+    '<button class="btn primary" data-act="save-material" data-pid="' + pid + '" data-mid="' + mid + '">保存</button>');
+
+  renderMatFileList();
+  var fi = $("#mFiles"), dz = $("#mDrop");
+  if(dz && fi){
+    dz.addEventListener("click", function(){ fi.click(); });
+    dz.addEventListener("dragover", function(e){ e.preventDefault(); dz.classList.add("over"); });
+    dz.addEventListener("dragleave", function(){ dz.classList.remove("over"); });
+    dz.addEventListener("drop", function(e){
+      e.preventDefault(); dz.classList.remove("over");
+      addMatFiles(e.dataTransfer && e.dataTransfer.files);
+    });
+    fi.addEventListener("change", function(e){ addMatFiles(e.target.files); fi.value = ""; });
+  }
+}
+
+function saveMaterial(pid, mid){
+  var p = findPerson(pid), m = findMat(mid);
+  if(!p || !m) return;
+  var it = p.materials[mid];
+  var st   = $("#mStatus").value;
+  var note = $("#mNote").value.trim();
+  var file = $("#mFile").value.trim();
+  var link = $("#mLink").value.trim();
+  var files = MATE_FILES.map(function(f){
+    return { name:f.name, type:f.type || "", size:f.size || 0, data:f.data || "" };
+  });
+
+  if(MATE_BUSY){ toast("附件正在读取，请稍候再保存"); return; }
+  if(st !== "missing" && !file && !link && !files.length){ toast("非「未交」状态请上传附件或填写文件名 / 直链"); return; }
+  if(st === "missing"){ file = ""; link = ""; files = []; if(!note) note = "未提交"; }
+
+  /* 本机 localStorage 约 5MB，附件以 base64 内嵌，总量过大要提前提示 */
+  var totalBytes = files.reduce(function(s, f){ return s + (f.data ? Math.round(f.data.length * 0.75) : 0); }, 0);
+  if(totalBytes > 3.5 * 1024 * 1024){
+    if(!window.confirm("当前附件合计约 " + (totalBytes / 1048576).toFixed(1) +
+      " MB，可能超出浏览器本机存储上限（约 5MB），导致其他档案保存失败。\n\n建议压缩图片 / 拆分文件，或把大文件放入资料库后改用「附件直链」。仍要保存吗？")) return;
+  }
+
+  var changed = it.status !== st || (it.note || "") !== note || (it.file || "") !== file ||
+                (it.link || "") !== link || JSON.stringify(it.files || []) !== JSON.stringify(files);
+  if(!changed){ closeModal(); toast("未做任何修改"); return; }
+
+  var oldLabel = ST[it.status].label;
+  it.status = st; it.note = note; it.file = file; it.link = link; it.files = files;
+  it.updatedAt = nowStamp(); it.updatedBy = CFG.user;
+  log("编辑材料条目", m.name + " " + oldLabel + "→" + ST[st].label + (note ? " · " + note : "") +
+      (files.length ? " · 附件 " + files.length + " 份" : (file ? " · 附件 " + file : "")), p.id, p.name);
+  saveAll(); closeModal(); render();
+  toast(p.name + " · " + m.name + " 已保存");
+}
+
+/* 打开材料附件：内嵌文件直接预览 / 下载，仅登记文件名的走资料库或直链 */
+function openAttachment(pid, mid, idx){
+  var p = findPerson(pid); if(!p) return;
+  var it = p.materials[mid]; if(!it) return;
+  var f = (it.files || [])[Number(idx)];
+  if(!f) return;
+  if(f.data){
+    var isImg = /^image\//.test(f.type || "") || /\.(jpg|jpeg|png|gif|webp|bmp)$/i.test(f.name);
+    if(isImg){
+      openModal(esc(f.name), '<div class="attprev"><img src="' + f.data + '" alt="' + esc(f.name) + '"></div>',
+        '<button class="btn" data-act="close-modal">关闭</button>' +
+        '<a class="btn primary" href="' + f.data + '" download="' + esc(f.name) + '">下载原图</a>');
+    }else{
+      var a = document.createElement("a");
+      a.href = f.data; a.download = f.name;
+      document.body.appendChild(a); a.click(); a.remove();
+    }
+    log("打开附件", f.name, p.id, p.name);
+    saveAll();
+    return;
+  }
+  if(it.link){ window.open(it.link, "_blank", "noopener"); return; }
+  openFile(pid, mid);
+}
+
+/* ---------------- 活动记录增删改 ---------------- */
+function openActivityEditor(pid, idx){
+  var p = findPerson(pid); if(!p) return;
+  var isNew = (idx === null || idx === undefined || idx === "");
+  var a = isNew ? { date:"", title:"", hours:0 } : p.activities[Number(idx)];
+  if(!a){ toast("记录不存在"); return; }
+  var t = new Date();
+  var dflt = a.date || (t.getFullYear() + "-" + pad2(t.getMonth()+1) + "-" + pad2(t.getDate()));
+  var body =
+    '<div class="field"><label>活动时间 *</label><input class="inp" id="aDate" type="date" value="' + esc(dflt) + '"></div>' +
+    '<div class="field"><label>活动名称 *</label><input class="inp" id="aTitle" type="text" placeholder="如 主题党日：重温入党誓词" value="' + esc(a.title) + '"></div>' +
+    '<div class="field" style="margin-bottom:0"><label>学时</label><input class="inp" id="aHours" type="number" min="0" step="1" value="' + (a.hours || 0) + '">' +
+      '<p class="hint">保存后自动同步「活动参与记录」材料的次数与学时。</p></div>';
+  openModal(isNew ? "新增活动记录" : "编辑活动记录", body,
+    '<button class="btn" data-act="close-modal">取消</button>' +
+    '<button class="btn primary" data-act="save-activity" data-pid="' + pid + '" data-idx="' + (isNew ? "" : idx) + '">保存</button>');
+}
+
+function syncActivity(p){
+  var n = p.activities.length;
+  var h = p.activities.reduce(function(s, x){ return s + (Number(x.hours) || 0); }, 0);
+  var it = p.materials.activity;
+  it.updatedAt = nowStamp(); it.updatedBy = CFG.user;
+  if(n > 0){
+    it.note = n + " 次 · " + h + " 学时";
+    if(it.status === "missing"){ it.status = "done"; if(!it.file && !it.link) it.file = FILE_NAME.activity; }
+  }else{
+    it.note = "未提交"; it.status = "missing"; it.file = ""; it.link = "";
+  }
+}
+
+function saveActivity(pid, idx){
+  var p = findPerson(pid); if(!p) return;
+  var date  = $("#aDate").value;
+  var title = $("#aTitle").value.trim();
+  var hours = Number($("#aHours").value || 0);
+  if(!date || !title){ toast("请填写活动时间与名称"); return; }
+  if(isNaN(hours) || hours < 0) hours = 0;
+
+  var isNew = (idx === "" || idx === undefined || idx === null);
+  if(isNew){
+    p.activities.unshift({ date: date, title: title, hours: hours });
+    log("新增活动记录", date + " " + title + "（" + hours + " 学时）", p.id, p.name);
+  }else{
+    var a = p.activities[Number(idx)];
+    if(!a){ toast("记录不存在"); return; }
+    log("编辑活动记录", a.date + " " + a.title + " → " + title, p.id, p.name);
+    p.activities[Number(idx)] = { date: date, title: title, hours: hours };
+  }
+  p.activities.sort(function(x, y){ return x.date < y.date ? 1 : (x.date > y.date ? -1 : 0); });
+  syncActivity(p);
+  saveAll(); closeModal(); render();
+  toast(isNew ? "已新增活动记录" : "活动记录已更新");
+}
+
+function deleteActivity(pid, idx){
+  var p = findPerson(pid); if(!p) return;
+  var a = p.activities[Number(idx)]; if(!a) return;
+  if(!window.confirm("确定删除活动记录「" + a.title + "」（" + a.date + "）？")) return;
+  p.activities.splice(Number(idx), 1);
+  syncActivity(p);
+  log("删除活动记录", a.date + " " + a.title, p.id, p.name);
+  saveAll(); render();
+  toast("活动记录已删除");
+}
+
+/* ---------------- 批次管理 ---------------- */
+function openBatchManager(){
+  var list = batchList();
+  var rows = list.map(function(b, i){
+    var n = DB.people.filter(function(p){ return p.batch === b; }).length;
+    return '<div class="bm-row">' +
+      '<input class="inp" id="bn' + i + '" type="text" value="' + esc(b) + '" title="' + esc(b) + '">' +
+      '<div class="bm-op">' +
+        '<span class="tinfo">' + n + ' 人</span>' +
+        '<button class="ebtn mini" data-act="rename-batch" data-idx="' + i + '">重命名</button>' +
+        '<button class="ebtn mini danger" data-act="del-batch" data-idx="' + i + '"' +
+          (n ? ' disabled style="opacity:.38;cursor:not-allowed"' : '') + '>删除</button>' +
+      '</div>' +
+    '</div>';
+  }).join("");
+
+  openModal("批次管理",
+    '<p class="hint" style="margin-bottom:12px">批次即「期数」，如「25年上半年—43期」。重命名会同步更新该批次全部人员档案；仅空批次可删除。</p>' +
+    (rows || '<p class="hint">暂无批次，请在下方新增。</p>') +
+    '<div class="bm-new"><input class="inp" id="newBatch" type="text" placeholder="如 28年上半年—49期"><button class="btn primary" data-act="new-batch" style="height:34px">新增批次</button></div>',
+    '<button class="btn" data-act="close-modal">关闭</button>');
+}
+
+function renameBatch(idx){
+  var list = batchList();
+  var b = list[Number(idx)];
+  if(b === undefined) return;
+  var val = ($("#bn" + idx).value || "").trim();
+  if(!val){ toast("批次名称不能为空"); return; }
+  if(val === b){ toast("名称未变化"); return; }
+  if(list.indexOf(val) > -1){ toast("已存在同名批次"); return; }
+  var n = 0;
+  DB.people.forEach(function(p){ if(p.batch === b){ p.batch = val; n++; } });
+  var bi = DB.meta.batches.indexOf(b);
+  if(bi > -1) DB.meta.batches[bi] = val;
+  log("重命名批次", b + " → " + val + "（" + n + " 人）");
+  saveAll(); render(); openBatchManager();
+  toast("批次已重命名，同步更新 " + n + " 人");
+}
+
+function addBatch(){
+  var val = ($("#newBatch").value || "").trim();
+  if(!val){ toast("请输入批次名称"); return; }
+  if(batchList().indexOf(val) > -1){ toast("该批次已存在"); return; }
+  DB.meta.batches.push(val);
+  log("新增批次", val);
+  saveAll(); render(); openBatchManager();
+  toast("已新增批次「" + val + "」");
+}
+
+function deleteBatch(idx){
+  var list = batchList();
+  var b = list[Number(idx)];
+  if(b === undefined) return;
+  var n = DB.people.filter(function(p){ return p.batch === b; }).length;
+  if(n > 0){ toast("该批次下还有 " + n + " 人，请先转移或删除人员"); return; }
+  if(!window.confirm("确定删除空批次「" + b + "」？")) return;
+  DB.meta.batches = DB.meta.batches.filter(function(x){ return x !== b; });
+  log("删除批次", b);
+  saveAll(); render(); openBatchManager();
+  toast("批次已删除");
+}
+
+/* ---------------- 批量导入：建期数 + 建人 + 建整套档案 ---------------- */
+var IMPORT_ACTS = [
+  ["党史学习教育专题党课", 4],
+  ["主题党日：重温入党誓词", 2],
+  ["志愿服务：社区助老行动", 4],
+  ["红色教育基地参观", 6]
+];
+
+/* 一行 = 一人，字段顺序不限：姓名 / 学号 / 班级 / 手机号 / 序号 都能自动认 */
+function parseRosterLine(line){
+  var raw = String(line == null ? "" : line).replace(/^\uFEFF/, "").trim();
+  if(!raw) return null;
+  if(/^(#|\/\/)/.test(raw)) return null;
+  raw = raw.replace(/^[（(]?\d{1,3}[）)]?\s*[.、．]\s*/, "");   /* 去掉 1. / （1）/ 1、 这类序号前缀 */
+
+  var parts = raw.split(/[,，;；\t|]+/).map(function(s){ return s.trim(); }).filter(Boolean);
+  if(parts.length <= 1){
+    var sp = raw.split(/\s+/).filter(Boolean);
+    if(sp.length > 1) parts = sp;
+  }
+  if(!parts.length) return null;
+  if(parts.some(function(t){ return t === "姓名"; })) return null;   /* 表头行 */
+
+  var r = { seq:"", name:"", sid:"", cls:"", phone:"", prob:false };
+  var rest = [];
+  parts.forEach(function(t, i){
+    if(!r.phone && /^1[3-9]\d{9}$/.test(t)){ r.phone = t; return; }
+    if(!r.sid && /^\d{6,14}$/.test(t)){ r.sid = t; return; }
+    if(!r.cls && /班|系|学院/.test(t)){ r.cls = t; return; }
+    if(!r.seq && i === 0 && /^\d{1,3}$/.test(t) && parts.length > 1){ r.seq = pad2(t); return; }
+    rest.push(t);
+  });
+
+  var nm = rest.shift() || "";
+  nm = nm.replace(/[（(]\s*预备?(党员)?\s*[）)]/g, function(){ r.prob = true; return ""; })
+         .replace(/[*＊]$/, function(){ r.prob = true; return ""; })
+         .replace(/\s+/g, "");
+  r.name = nm;
+  if(!r.name || !/[\u4e00-\u9fa5A-Za-z]/.test(r.name)) return null;
+  return r;
+}
+
+function parseRoster(text){
+  var rows = [];
+  String(text || "").replace(/\r\n?/g, "\n").split("\n").forEach(function(l){
+    var r = parseRosterLine(l);
+    if(r) rows.push(r);
+  });
+  return rows;
+}
+
+function guessYearFromBatch(b){
+  var m = String(b || "").match(/(\d{2})\s*年/);
+  if(m) return String(2000 + parseInt(m[1], 10));
+  return String(new Date().getFullYear());
+}
+
+/* 按「27年下半年—48期」推出下一期「28年上半年—49期」，省去手输 */
+function nextBatchName(){
+  var list = batchList();
+  var last = list[list.length - 1] || "";
+  var m = last.match(/^(\d{2})\s*年\s*(上|下)半年\s*[—\-–~]?\s*(\d+)\s*期$/);
+  if(!m) return "";
+  var y = parseInt(m[1], 10), q = parseInt(m[3], 10) + 1;
+  if(m[2] === "上") return pad2(y) + "年下半年—" + q + "期";
+  return pad2(y + 1) + "年上半年—" + q + "期";
+}
+
+/* 预览与真正导入共用同一套计算，避免看到的和导进去的不一致 */
+function planRosterImport(){
+  var sel = $("#impBatch");
+  var batchName = !sel ? "" : (sel.value === "__new__"
+    ? ($("#impBatchNew") ? $("#impBatchNew").value.trim() : "")
+    : sel.value);
+  var rows = parseRoster($("#impText") ? $("#impText").value : "");
+  var onBtn = $("#impStatus") ? $("#impStatus").querySelector(".on") : null;
+  var status = onBtn ? onBtn.getAttribute("data-st") : "missing";
+  var fillFile = !$("#impFile2") || $("#impFile2").checked;
+  var genActs  = !!($("#impActs") && $("#impActs").checked);
+
+  var same = DB.people.filter(function(p){ return p.batch === batchName; });
+  var maxSeq = 0;
+  same.forEach(function(p){ var n = parseInt(p.seq, 10); if(!isNaN(n) && n > maxSeq) maxSeq = n; });
+
+  /* ySrc：沿用该期已有的学号前缀；autoN：从该期最大尾号 +1 开始 */
+  var ySrc = same.filter(function(p){ return /^\d{8,}$/.test(p.sid); })[0];
+  var year = ySrc ? ySrc.sid.slice(0, 4) : guessYearFromBatch(batchName);
+  var autoN = 1;
+  if(ySrc){ var n0 = parseInt(ySrc.sid.slice(4), 10); if(!isNaN(n0) && n0 >= autoN) autoN = n0 + 1; }
+  /* 名单里手填的学号先占位，自动编号要绕开它们，避免自己人撞自己人 */
+  rows.forEach(function(r){
+    if(!r.sid || r.sid.slice(0, 4) !== year) return;
+    var n = parseInt(r.sid.slice(4), 10);
+    if(!isNaN(n) && n + 1 > autoN) autoN = n + 1;
+  });
+
+  var dbSid = {}, usedSid = {}, usedName = {}, usedSeq = {};
+  DB.people.forEach(function(p){ dbSid[p.sid] = 1; usedSid[p.sid] = 1; });
+  rows.forEach(function(r){ if(r.sid) usedSid[r.sid] = 1; });
+  same.forEach(function(p){
+    usedName[p.name] = 1;
+    var n = parseInt(p.seq, 10);
+    if(!isNaN(n)) usedSeq[n] = 1;
+  });
+
+  var seenNow = {};
+  var list = [], seqN = maxSeq;
+  rows.forEach(function(r){
+    var it = { seq:"", name:r.name, sid:r.sid, cls:r.cls, phone:r.phone, prob:r.prob, ok:true, note:"" };
+    if(it.sid && dbSid[it.sid]){
+      it.ok = false; it.note = "学号已存在，跳过";
+      list.push(it); return;
+    }
+    if(it.sid && seenNow[it.sid]){
+      it.ok = false; it.note = "名单内学号重复，跳过";
+      list.push(it); return;
+    }
+    if(!it.sid){
+      while(usedSid[year + String(autoN).padStart(4, "0")]) autoN++;
+      it.sid = year + String(autoN).padStart(4, "0");
+      autoN++;
+      it.note = "学号自动生成";
+    }
+    usedSid[it.sid] = 1;
+    seenNow[it.sid] = 1;
+
+    /* 名单里带的序号只在空位时沿用，撞上本期已有编号就顺延，避免同一期出现两个 No.01 */
+    var wantSeq = r.seq ? parseInt(r.seq, 10) : NaN;
+    if(!isNaN(wantSeq) && !usedSeq[wantSeq]){
+      it.seq = pad2(wantSeq);
+      if(wantSeq > seqN) seqN = wantSeq;
+    } else {
+      while(usedSeq[++seqN]);
+      it.seq = pad2(seqN);
+      if(!isNaN(wantSeq)) it.note = it.note ? it.note + " · 序号已顺延" : "序号已顺延";
+    }
+    usedSeq[parseInt(it.seq, 10)] = 1;
+
+    if(usedName[it.name]) it.note = it.note ? it.note + " · 同批已有同名" : "同批已有同名";
+    list.push(it);
+  });
+
+  return { batchName: batchName, list: list, status: status, fillFile: fillFile, genActs: genActs };
+}
+
+function importMatNote(mid, st, batchName, acts){
+  if(st === "missing") return "未提交";
+  if(mid === "apply") return "手写原件扫描件";
+  if(mid === "report") return "4/4 篇";
+  if(mid === "talk") return "2 次谈话记录";
+  if(mid === "cultivate") return "第 1—2 季度考察意见";
+  if(mid === "cert"){
+    var q = (String(batchName).match(/(\d+)\s*期/) || [])[1];
+    return q ? ("党校第 " + q + " 期结业") : "党校结业证书";
+  }
+  var h = acts.reduce(function(s, a){ return s + a.hours; }, 0);
+  return acts.length ? (acts.length + " 次 · " + h + " 学时") : "待补录明细";
+}
+
+function makeImportActs(){
+  var base = new Date();
+  return IMPORT_ACTS.map(function(a, i){
+    var d = new Date(base.getTime() - (i + 1) * 26 * 86400000);
+    return { date: d.getFullYear() + "-" + pad2(d.getMonth() + 1) + "-" + pad2(d.getDate()), title: a[0], hours: a[1] };
+  }).sort(function(x, y){ return x.date < y.date ? 1 : -1; });
+}
+
+function openRosterImport(){
+  var batches = batchList();
+  var cur = (state.batch !== "全部" && batches.indexOf(state.batch) > -1) ? state.batch : "__new__";
+
+  var body =
+    '<div class="imp-sec"><label class="lb">导入到哪一期 *</label>' +
+      '<div style="display:flex;gap:8px;flex-wrap:wrap">' +
+        '<select class="inp" id="impBatch" style="flex:1 1 210px;height:34px">' +
+          '<option value="__new__"' + (cur === "__new__" ? " selected" : "") + '>＋ 新建一期…</option>' +
+          batches.map(function(b){
+            return '<option value="' + esc(b) + '"' + (b === cur ? " selected" : "") + '>' + esc(b) + '（已 ' +
+              DB.people.filter(function(p){ return p.batch === b; }).length + ' 人）</option>';
+          }).join("") +
+        '</select>' +
+        '<input class="inp' + (cur === "__new__" ? "" : " imp-hide") + '" id="impBatchNew" type="text" ' +
+          'placeholder="如 28年上半年—49期" value="' + esc(cur === "__new__" ? nextBatchName() : "") + '" ' +
+          'style="flex:1 1 210px;height:34px">' +
+      '</div>' +
+      '<p class="hint">默认按最后一期自动推出下一期，可直接改名；也可以选一个已有期数继续往里加人。期数不存在会自动建立。</p>' +
+    '</div>' +
+
+    '<div class="imp-sec">' +
+      '<label class="lb">名单</label>' +
+      '<div class="dropzone" id="dropzone">' +
+        '<div class="dz1">把名单文档拖到这里</div>' +
+        '<div class="dz2">支持 txt / csv / md（Excel 请先另存为 CSV）；也可以点击选择文件，或在下方直接粘贴</div>' +
+        '<input type="file" id="impFile" class="imp-hide" accept=".txt,.csv,.tsv,.md,text/plain" multiple>' +
+      '</div>' +
+      '<textarea class="imp-list" id="impText" placeholder="每行一人，字段顺序不限，用逗号或制表符分隔：&#10;张三&#10;李四,20240025&#10;王雨欣,20240026,思想政治教育2401班,13800001234&#10;钱一诺（预备）,20240028,法学2402班"></textarea>' +
+      '<details style="margin-top:6px"><summary style="font-size:11.5px;color:var(--ink-3);cursor:pointer">支持哪些写法？</summary>' +
+        '<div class="hint" style="line-height:1.9">' +
+          '· 只写姓名：学号、序号自动生成，班级留空后再补<br>' +
+          '· 姓名、学号：按顺序写即可，逗号 / 制表符 / 空格都行<br>' +
+          '· 带序号 1. 张三 或 1,张三：序号空位沿用，撞号自动顺延<br>' +
+          '· 姓名后加「（预备）」或「*」：自动标记为预备党员<br>' +
+          '· 从 Excel 复制整列粘贴也可以，表头（含「姓名」的行）自动跳过<br>' +
+          '· 学号已存在的人会被跳过，不会覆盖原有档案' +
+        '</div></details>' +
+    '</div>' +
+
+    '<div class="imp-sec"><label class="lb">建档方式</label>' +
+      '<div class="seg" id="impStatus">' +
+        '<button data-st="missing" class="on">六项材料标记未交</button>' +
+        '<button data-st="done">六项材料标记已完成</button>' +
+      '</div>' +
+      '<div class="imp-opts">' +
+        '<label class="chk"><input type="checkbox" id="impFile2" checked> 预填标准附件名（01_入党申请书.pdf …），后续上传 PDF 即可直接打开</label>' +
+        '<label class="chk"><input type="checkbox" id="impActs"> 同时生成 4 条活动参与记录示例，并回写活动台账</label>' +
+      '</div>' +
+    '</div>' +
+
+    '<div class="imp-sec" style="margin-bottom:0"><label class="lb">解析预览</label><div id="impPreview"></div></div>';
+
+  openModal("批量导入名单 · 生成整套档案", body,
+    '<button class="btn" data-act="close-modal">取消</button>' +
+    '<button class="btn primary" data-act="do-import" id="impGo">确认导入</button>', true);
+
+  var dz = $("#dropzone"), fi = $("#impFile");
+  $("#impBatch").addEventListener("change", function(e){
+    var isNew = e.target.value === "__new__";
+    $("#impBatchNew").classList.toggle("imp-hide", !isNew);
+    if(isNew) setTimeout(function(){ $("#impBatchNew").focus(); }, 30);
+    paintRosterPreview();
+  });
+  $("#impBatchNew").addEventListener("input", paintRosterPreview);
+  $("#impText").addEventListener("input", paintRosterPreview);
+  $("#impStatus").addEventListener("click", function(e){
+    var b = e.target.closest ? e.target.closest("button") : null;
+    if(!b || !$("#impStatus").contains(b)) return;
+    Array.prototype.forEach.call($("#impStatus").children, function(x){ x.classList.toggle("on", x === b); });
+    paintRosterPreview();
+  });
+  $("#impFile2").addEventListener("change", paintRosterPreview);
+  $("#impActs").addEventListener("change", paintRosterPreview);
+
+  dz.addEventListener("click", function(){ fi.click(); });
+  ["dragenter","dragover"].forEach(function(ev){
+    dz.addEventListener(ev, function(e){ e.preventDefault(); e.stopPropagation(); dz.classList.add("on"); });
+  });
+  ["dragleave","dragend","drop"].forEach(function(ev){
+    dz.addEventListener(ev, function(e){ e.preventDefault(); e.stopPropagation(); dz.classList.remove("on"); });
+  });
+  dz.addEventListener("drop", function(e){
+    var fs = e.dataTransfer && e.dataTransfer.files;
+    if(fs && fs.length) appendRosterFiles(fs);
+  });
+  fi.addEventListener("change", function(e){
+    if(e.target.files && e.target.files.length) appendRosterFiles(e.target.files);
+    e.target.value = "";
+  });
+
+  paintRosterPreview();
+}
+
+function readRosterFile(file, cb){
+  var r = new FileReader();
+  r.onload = function(){
+    var t = String(r.result || "");
+    if(t.indexOf("\uFFFD") === -1){ cb(t); return; }
+    var r2 = new FileReader();   /* utf-8 出现乱码时按 GBK 重读，兼容 Excel 导出的中文 CSV */
+    r2.onload = function(){ cb(String(r2.result || "")); };
+    r2.onerror = function(){ cb(t); };
+    try{ r2.readAsText(file, "gbk"); }catch(e){ cb(t); }
+  };
+  r.onerror = function(){ cb(""); };
+  try{ r.readAsText(file, "utf-8"); }catch(e){ cb(""); }
+}
+
+function appendRosterFiles(files){
+  var arr = Array.prototype.slice.call(files).filter(function(f){
+    return /\.(txt|csv|tsv|md)$/i.test(f.name) || /^text\//.test(f.type || "");
+  });
+  if(!arr.length){ toast("请拖入 txt / csv / md 文本名单"); return; }
+  var texts = new Array(arr.length), left = arr.length;
+  arr.forEach(function(f, i){
+    readRosterFile(f, function(t){
+      texts[i] = t;
+      if(--left) return;
+      var box = $("#impText");
+      if(!box) return;
+      var joined = texts.filter(Boolean).join("\n");
+      box.value = (box.value.trim() ? box.value.replace(/\s+$/, "") + "\n" : "") + joined;
+      paintRosterPreview();
+      toast("已读取 " + arr.length + " 个文件");
+    });
+  });
+}
+
+function paintRosterPreview(){
+  var box = $("#impPreview");
+  if(!box) return;
+  var go = $("#impGo");
+  var plan = planRosterImport();
+  var rows = plan.list;
+
+  if(!rows.length){
+    box.innerHTML = '<div class="hint" style="padding:8px 0">还没有解析到名单。拖入文件、选择文件，或在上面的框里粘贴，每行一人。</div>';
+    if(go){ go.disabled = true; go.style.opacity = ".45"; go.style.cursor = "not-allowed"; go.textContent = "确认导入"; }
+    return;
+  }
+
+  var okN = rows.filter(function(r){ return r.ok; }).length;
+  var skipN = rows.length - okN;
+  var html = '<div class="imp-stat">将导入 <b>' + okN + '</b> 人' +
+    (skipN ? ' · 跳过 <b>' + skipN + '</b> 人' : '') +
+    ' · 目标期数 <b>' + esc(plan.batchName || "未选择") + '</b>' +
+    ' · ' + (plan.status === "missing" ? "六项材料为未交" : "六项材料标记已完成") +
+    (plan.fillFile && plan.status !== "missing" ? " · 预填附件名" : "") +
+    (plan.genActs ? " · 含活动记录" : "") + '</div>';
+
+  html += '<div class="imp-scroll"><table class="rostertbl"><thead><tr>' +
+    '<th style="width:52px">序号</th><th style="width:84px">姓名</th><th style="width:112px">学号</th>' +
+    '<th>班级</th><th style="width:150px">备注</th></tr></thead><tbody>' +
+    rows.map(function(r){
+      return '<tr' + (r.ok ? "" : ' class="skip"') + '>' +
+        '<td class="dim">' + esc(r.seq || "—") + '</td>' +
+        '<td>' + esc(r.name || "—") + (r.prob ? ' <span class="pflag" title="预备党员">预</span>' : '') + '</td>' +
+        '<td class="dim">' + esc(r.sid || "—") + '</td>' +
+        '<td class="dim">' + esc(r.cls || "—") + '</td>' +
+        '<td>' + (r.note ? '<span class="' + (r.ok ? "r-warn" : "r-bad") + '">' + esc(r.note) + '</span>' : '<span class="dim">—</span>') + '</td>' +
+      '</tr>';
+    }).join("") + '</tbody></table></div>';
+
+  box.innerHTML = html;
+  if(go){
+    go.disabled = !okN;
+    go.style.opacity = okN ? "1" : ".45";
+    go.style.cursor = okN ? "pointer" : "not-allowed";
+    go.textContent = okN ? ("确认导入 " + okN + " 人") : "确认导入";
+  }
+}
+
+function doRosterImport(){
+  var plan = planRosterImport();
+  if(!plan.batchName){ toast("请选择已有期数，或填写新期数名称"); return; }
+  var ok = plan.list.filter(function(r){ return r.ok; });
+  if(!ok.length){ toast("没有可导入的人员，请检查名单或学号是否重复"); return; }
+
+  var isNewBatch = batchList().indexOf(plan.batchName) < 0;
+  if(isNewBatch) DB.meta.batches.push(plan.batchName);
+
+  var today = dateStamp();
+  ok.forEach(function(r){
+    var acts = plan.genActs ? makeImportActs() : [];
+    var mat = {};
+    MATERIALS.forEach(function(m){
+      var st = plan.status;
+      if(m.id === "activity" && plan.genActs && st === "missing") st = "done";
+      mat[m.id] = {
+        status: st,
+        file: (st === "missing" || !plan.fillFile) ? "" : FILE_NAME[m.id],
+        note: importMatNote(m.id, st, plan.batchName, acts),
+        updatedAt: st === "missing" ? "" : today,
+        updatedBy: st === "missing" ? "" : (CFG.user || "系统"),
+        files: []
+      };
+    });
+    var np = {
+      id: nextPersonId(), seq: r.seq, batch: plan.batchName, name: r.name, sid: r.sid,
+      cls: r.cls, phone: r.phone,
+      probation: !!r.prob, probationDate: r.prob ? today : "",
+      materials: mat, activities: acts
+    };
+    DB.people.push(np);
+    log("批量导入建档", "批次 " + plan.batchName + " · 学号 " + r.sid + " · 六项材料初始为" + ST[plan.status].label, np.id, r.name);
+  });
+
+  log("批量导入名单", plan.batchName + " · " + (isNewBatch ? "新建期数，" : "") + "新增 " + ok.length + " 人" +
+      (plan.list.length - ok.length ? "，跳过 " + (plan.list.length - ok.length) + " 人" : ""));
+
+  saveAll();
+  state.q = "";
+  state.batch = plan.batchName;
+  closeModal();
+  if(location.hash !== "#/persons") location.hash = "#/persons";
+  else render();
+  toast("已导入 " + ok.length + " 人，整套档案已生成");
+}
+
+/* ---------------- 日志删除 ---------------- */
+function deleteLog(idx){
+  var i = Number(idx);
+  if(isNaN(i) || !LOGS[i]) return;
+  var l = LOGS[i];
+  if(!window.confirm("确定删除这条操作日志？\n" + l.ts + " " + l.user + " " + l.act)) return;
+  LOGS.splice(i, 1);
+  saveAll(); render();
+  toast("日志已删除");
+}
+
+/* ---------------- 导入 ---------------- */
+function importJSON(file){
+  var reader = new FileReader();
+  reader.onload = function(){
+    try{
+      var d = JSON.parse(String(reader.result));
+      if(!d || !Array.isArray(d.people) || !d.people.length) throw new Error("不是有效的档案快照");
+      DB = { meta: d.meta || DB.meta, people: d.people };
+      if(Array.isArray(d.logs)) LOGS = d.logs;
+      normalize();
+      log("导入快照", "导入 " + DB.people.length + " 人档案数据");
+      saveAll();
+      closeModal();
+      render();
+      toast("数据快照导入成功，共 " + DB.people.length + " 人");
+    }catch(err){
+      toast("导入失败：" + (err && err.message ? err.message : "文件格式不正确"));
+    }
+  };
+  reader.readAsText(file, "utf-8");
+}
+
+/* ---------------- 事件总线 ---------------- */
+document.addEventListener("click", function(e){
+  var el = e.target.closest("[data-act]");
+  if(!el) { closePop(); return; }
+  var act = el.getAttribute("data-act");
+
+  if(act === "pick-role"){
+    e.preventDefault(); e.stopPropagation();
+    openRolePop(el);
+    return;
+  }
+  if(act === "status"){
+    e.preventDefault(); e.stopPropagation();
+    openStatusPop(el, el.getAttribute("data-pid"), el.getAttribute("data-mid"));
+    return;
+  }
+  if(act === "file"){
+    e.preventDefault();
+    openFile(el.getAttribute("data-pid"), el.getAttribute("data-mid"));
+    return;
+  }
+  if(act === "edit-person"){ openPersonEditor(el.getAttribute("data-pid")); return; }
+  if(act === "new-person"){ openPersonEditor(null, el.getAttribute("data-batch")); return; }
+  if(act === "toggle-batch"){ e.preventDefault(); toggleBatch(el.getAttribute("data-b")); return; }
+  if(act === "open-att"){
+    e.preventDefault();
+    openAttachment(el.getAttribute("data-pid"), el.getAttribute("data-mid"), el.getAttribute("data-i"));
+    return;
+  }
+  if(act === "rm-mat-file"){
+    e.preventDefault();
+    var ri = Number(el.getAttribute("data-i"));
+    if(ri >= 0 && ri < MATE_FILES.length) MATE_FILES.splice(ri, 1);
+    renderMatFileList();
+    return;
+  }
+  if(act === "import-roster"){ openRosterImport(); return; }
+  if(act === "do-import"){ doRosterImport(); return; }
+  if(act === "del-person"){ deletePerson(el.getAttribute("data-pid")); return; }
+  if(act === "save-person"){ savePerson(el.getAttribute("data-pid")); return; }
+  if(act === "toggle-edit"){ setEdit(!EDIT); return; }
+  if(act === "edit-material"){ openMaterialEditor(el.getAttribute("data-pid"), el.getAttribute("data-mid")); return; }
+  if(act === "save-material"){ saveMaterial(el.getAttribute("data-pid"), el.getAttribute("data-mid")); return; }
+  if(act === "new-activity"){ openActivityEditor(el.getAttribute("data-pid"), null); return; }
+  if(act === "edit-activity"){ openActivityEditor(el.getAttribute("data-pid"), el.getAttribute("data-idx")); return; }
+  if(act === "save-activity"){ saveActivity(el.getAttribute("data-pid"), el.getAttribute("data-idx")); return; }
+  if(act === "del-activity"){ deleteActivity(el.getAttribute("data-pid"), el.getAttribute("data-idx")); return; }
+  if(act === "batch-manager"){ openBatchManager(); return; }
+  if(act === "rename-batch"){ renameBatch(el.getAttribute("data-idx")); return; }
+  if(act === "del-batch"){ deleteBatch(el.getAttribute("data-idx")); return; }
+  if(act === "new-batch"){ addBatch(); return; }
+  if(act === "del-log"){ deleteLog(el.getAttribute("data-idx")); return; }
+  if(act === "settings"){ openSettings(""); return; }
+  if(act === "save-settings"){
+    var u = $("#setUser").value.trim();
+    var b = $("#setBase").value.trim();
+    var rEl = $("#setRole");
+    var r = rEl ? rEl.value : "";
+    if(u) CFG.user = u;
+    CFG.base = b;
+    if(r && ROLE_KEYS.indexOf(r) > -1 && r !== CFG.role){
+      log("切换身份", (CFG.user || "—") + "：" + CFG.role + " → " + r);
+      CFG.role = r;
+    }
+    saveAll();
+    syncSessRole();
+    closeModal();
+    paintUser();
+    log("修改设置", "资料库地址：" + (b || "未配置"));
+    saveAll();
+    toast("设置已保存");
+    return;
+  }
+  if(act === "export-csv"){ exportCSV(); return; }
+  if(act === "export-json"){ exportJSON(); return; }
+  if(act === "import-json"){
+    var f = $("#impFile");
+    if(f) f.click();
+    return;
+  }
+  if(act === "reset-data"){
+    if(window.confirm("确定恢复演示数据？当前所有修改与日志将被覆盖，建议先导出数据快照。")){
+      DB = buildData();
+      LOGS = [];
+      log("恢复演示数据", "重置为初始演示档案");
+      saveAll();
+      closeModal();
+      render();
+      toast("已恢复演示数据");
+    }
+    return;
+  }
+  if(act === "clear-logs"){
+    if(window.confirm("确定清空全部操作日志？")){
+      LOGS = [];
+      log("清空日志", "操作日志已清空");
+      saveAll();
+      render();
+      toast("日志已清空");
+    }
+    return;
+  }
+  if(act === "close-modal"){ closeModal(); return; }
+  if(act === "library"){
+    if(CFG.base) window.open(CFG.base, "_blank", "noopener");
+    else openSettings("尚未配置资料库地址，请填写 WorkBuddy 资料库根地址。");
+    return;
+  }
+  if(act === "logout"){ logout(); return; }
+});
+
+document.addEventListener("keydown", function(e){
+  if(e.key === "Escape"){ closePop(); closeModal(); }
+});
+
+window.addEventListener("hashchange", render);
+
+/* ---------------- 登录 / 会话 ---------------- */
+function paintUser(){
+  var n = CFG.user || "管理员";
+  var av = $("#uavatar"), un = $("#uname"), ur = $("#urole");
+  if(av) av.textContent = n.slice(0,1);
+  if(un) un.textContent = n;
+  if(ur){
+    var rt = ur.querySelector(".rtxt");
+    if(rt) rt.textContent = CFG.role || "未设定";
+    ur.title = "当前身份：" + (CFG.role || "未设定") + " · 点击切换（老师 / 负责人 / 学生）";
+  }
+}
+
+/* 顶栏姓名后的身份选择：老师 / 负责人 / 学生 */
+function openRolePop(anchor){
+  var wasOpen = popEl && popEl.classList.contains("role-pop");
+  closePop();
+  if(wasOpen) return;
+
+  var el = document.createElement("div");
+  el.className = "pop role-pop";
+  el.innerHTML = '<div class="pop-title">切换当前身份 · ' + esc(CFG.user || "—") + '</div>' +
+    ROLES.map(function(r){
+      var on = CFG.role === r.k;
+      return '<button class="ritem' + (on ? " cur" : "") + '" data-role="' + esc(r.k) + '">' +
+        '<b>' + esc(r.k) + (on ? '<em class="ck">✓</em>' : '') + '</b>' +
+        '<span>' + esc(r.d) + '</span></button>';
+    }).join("");
+  document.body.appendChild(el);
+  popEl = el;
+  anchor.classList.add("on");
+
+  var r = anchor.getBoundingClientRect();
+  var w = el.offsetWidth, h = el.offsetHeight;
+  var left = Math.min(Math.max(8, r.right - w), window.innerWidth - w - 8);
+  var top  = r.bottom + 6;
+  if(top + h > window.innerHeight - 8) top = Math.max(8, r.top - h - 6);
+  el.style.left = left + "px";
+  el.style.top  = top + "px";
+
+  Array.prototype.forEach.call(el.querySelectorAll("[data-role]"), function(b){
+    b.addEventListener("click", function(){ pickRole(b.getAttribute("data-role")); });
+  });
+}
+
+function pickRole(k){
+  if(ROLE_KEYS.indexOf(k) === -1) return;
+  var old = CFG.role;
+  closePop();
+  if(old === k){ toast("当前身份已是「" + k + "」"); return; }
+  CFG.role = k;
+  log("切换身份", (CFG.user || "—") + "：" + (old || "未设定") + " → " + k);
+  saveAll();
+  syncSessRole();
+  paintUser();
+  toast("当前身份已切换为「" + k + "」");
+}
+
+function doLogin(u, p){
+  var acc = ACCOUNTS.find(function(a){ return a.u === u && a.p === p; });
+  if(!acc) return false;
+  CFG.user = acc.name;
+  CFG.role = normRole(acc.role);
+  try{ localStorage.setItem(LS_SESS, JSON.stringify({ u: acc.u, role: CFG.role, t: Date.now() })); }catch(e){}
+  saveAll();
+  log("登录系统", acc.name + " · " + CFG.role);
+  saveAll();
+  enterApp();
+  return true;
+}
+
+/* 会话里同步记录当前身份，刷新页面后不会被账号默认身份覆盖 */
+function syncSessRole(){
+  try{
+    var s = JSON.parse(localStorage.getItem(LS_SESS) || "null");
+    if(s && s.u){ s.role = CFG.role; s.t = Date.now(); localStorage.setItem(LS_SESS, JSON.stringify(s)); }
+  }catch(e){}
+}
+
+function logout(){
+  try{ localStorage.removeItem(LS_SESS); }catch(e){}
+  EDIT = false;
+  document.body.classList.remove("edit-mode");
+  $("#app").classList.add("hidden");
+  $("#login").classList.remove("hidden");
+  document.body.classList.add("login-mode");
+  $("#loginPass").value = "";
+  $("#loginErr").textContent = "";
+  currentPath = null;
+  window.scrollTo(0, 0);
+}
+
+function enterApp(){
+  $("#login").classList.add("hidden");
+  $("#app").classList.remove("hidden");
+  document.body.classList.remove("login-mode");
+  paintUser();
+  paintEditToggle();
+  if(!location.hash) location.hash = "#/";
+  render();
+}
+
+$("#loginForm").addEventListener("submit", function(e){
+  e.preventDefault();
+  var u = $("#loginUser").value.trim();
+  var p = $("#loginPass").value;
+  if(!u || !p){ $("#loginErr").textContent = "请输入账号与密码"; return; }
+  if(!doLogin(u, p)){ $("#loginErr").textContent = "账号或密码不正确，请重新输入"; return; }
+});
+
+/* ---------------- 启动 ---------------- */
+(function boot(){
+  loadAll();
+  var sess = null;
+  try{ sess = JSON.parse(localStorage.getItem(LS_SESS) || "null"); }catch(e){}
+  if(sess && sess.u){
+    var acc = ACCOUNTS.find(function(a){ return a.u === sess.u; });
+    if(acc){
+      CFG.user = acc.name;
+      CFG.role = normRole(sess.role || acc.role);
+      enterApp();
+      return;
+    }
+  }
+  $("#login").classList.remove("hidden");
+  document.body.classList.add("login-mode");
+})();
+</script>
+</body>
+</html>
